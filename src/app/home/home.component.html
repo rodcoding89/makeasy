@@ -1,0 +1,56 @@
+<div class="home">
+    <div class="content">
+        
+        <div class="innerpage">
+            <div class="category" (click) = "showCategory()">
+                <p class="categorie">{{optionValue}}<i class="fas fa-caret-down"></i></p>
+            </div>
+            <div class="categoriContent" *ngIf="isCategory">
+                <div class="item"*ngFor="let category of categorys">
+                    <p><i class="{{category.icon}}"></i>{{category.name}}</p>
+                    <div class="element" *ngFor="let categ of category.souscategory">
+                        <spam (click)="getItemValue(categ,category.name)">{{categ}}</spam>
+                    </div>
+                </div>
+            </div>
+            <div class="myform">
+                <div class="filtre" (click)="showhideFilter()"><p translate><i class="fas fa-list"></i>Filtre</p></div>
+                <div class="elefiltre" *ngIf="checkFilter">
+                    <div class="amount">
+                        <p translate>Prix</p>
+                        <input type="number" placeholder="Min" class="min">
+                        <input type="number" placeholder="Max" class="max">
+                    </div>
+                   <div class="location">
+                       <p translate>Quartier</p>
+                       <input type="text" placeholder="Situer le Quartier" class="distric">
+                   </div>
+                   <div class="status">
+                    <p translate class="pnew">Neouf</p>
+                    <input type="checkbox" class="new">
+                    <p translate>Occasion</p>
+                    <input type="checkbox" class="occasion">
+                   </div>
+                   <div class="apply" (click)="applyingFilter()"><p translate>Appliquer le Filtrage</p></div>
+                </div>
+                <form action="" method="get" class="search">
+                    <input autocomplete="off" type="search" placeholder="Faites vos Recherches" translate 
+                    value="{{categvalue}}" [(ngModel)] = "searchText" name="searchText" (keypress) = "filterKeypress()"><i class="fas fa-search"></i>
+                    <div class="pipefilter" *ngIf="isFilter" (mouseleave) = "hideFilterBlock()">
+                        
+                        <div class="categ" *ngFor =" let c of categorys">
+                            <div (click)="getItemCategValue(categ,c.name)" class = "categitem" *ngFor="let categ of c.souscategory | searchFilter: searchText"> {{categ}}</div>
+                        </div>    
+                        
+                    </div>
+                    <input (keypress) = "locationKeypress()" value="{{locatiovalue}}" autocomplete="off" type="text" [(ngModel)] = "searchLocation" name = "searchLocation" placeholder="Indiquer la Region" translate><i class="fas fa-map-marker-alt"></i>
+                    <div class="locationblock" (mouseleave) = "hideLocationBlock()" *ngIf="isLocation" >
+                        <div (click)="locationItem(l)" class="locationItem" *ngFor="let l of location | searchFilter: searchLocation">{{l}}</div>
+                    </div>
+                    <div class="go"><p translate>GO <i class="fas fa-chevron-right"></i></p></div>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+</div>

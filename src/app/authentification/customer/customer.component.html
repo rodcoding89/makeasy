@@ -1,0 +1,72 @@
+<div class="authcontent">
+    <div class="partone">
+        <div class="signtext" [@leftright1]="stateName">
+            <div class="hidediv" *ngIf="isSignText">
+                <h2 translate>Creation du compte</h2>
+                <h3 translate>Salut Salut !!!</h3>
+                <div class="signcontent">
+                    <p translate>Si vous etes une entreprise, une compagnie,un Particulier et souhaité poster ou proposer des services ou alors poster vos besoins ou recherche alors n'exiter plus creer votre compte gratuitement</p>
+                    <span translate>Vous ne disposez pas encore de compte alors creer en un ici</span>
+                    <p translate class="account" (click) = "createAccount($event)">JE CRÉE MON COMPTE</p>
+                </div>
+            </div>
+            <div class="logintext">
+                <div class="textcontent" *ngIf="isLoginText">
+                    <h2 translate>Connexion</h2>
+                    <h3 translate>Bienvenu chez Makeasy</h3>
+                    <p translate>Si tu vous avez deja un compte utilisateur alors connecté vous et profité de nos Services proposés</p>
+                    <div class="conn" (click)="connexion($event)"><p translate>Je me connecte et j'enprofite</p></div>
+                </div>
+            </div>
+        </div>
+        <div class="logingrid" [@rightleft1] = "stateName1">
+            <div class="gridcontent" *ngIf="isLogin">
+                <h3 translate>Inseré vos données de connexion</h3>
+                <p translate class="text">Connecter vous de maniere sécurisé et sans sourci</p>
+                <form action="" method="post">
+                    <div class="lemail">
+                        <p translate>Email</p>
+                        <input type="email" placeholder="yourmail@mail.com">
+                    </div>
+                    <div class="lpass">
+                        <p translate>Mot de passe</p>
+                        <input type="password" placeholder="12345">
+                    </div>
+                    <div class="sendBt"><p translate>CONNEXION</p></div>
+                </form>
+            </div>
+            <div class="gridsign" *ngIf="isSign">
+                <h3 translate>Inseré vos données d'inscription</h3>
+                <p translate class="text">ces données seront enregistrés dans notre base de donnée de maniére securisé</p>
+                <form action="" method="post">
+                    <div class="name">
+                        <p translate>Nom</p>
+                        <input type="text" placeholder="Andis">
+                    </div>
+                    <div class="lname">
+                        <p translate>Prenom</p>
+                        <input type="text" placeholder="Prenom">
+                    </div>
+                    <div class="email">
+                        <p translate>Email</p>
+                        <input type="email" placeholder="yourmail@mail.com">
+                    </div>
+                    <div class="tel">
+                        <p translate>Télephone Portable</p>
+                        <input type="tel" placeholder="00785565665">
+                    </div>
+                    <div class="pass">
+                        <p translate>Mot de passe</p>
+                        <input type="password" placeholder="12345">
+                    </div>
+                    <div class="cpass">
+                        <p translate>Confirmation du Mot de Passe</p>
+                        <input type="pass" placeholder="12345">
+                    </div>
+                    <div class="sendBtsign"><p translate>INSCRIPTION</p></div>
+                </form>
+            </div>  
+        </div>
+    </div> 
+</div>
+

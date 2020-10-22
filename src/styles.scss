@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+@import './scss/variable.scss';
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
+body{
+    font-family: $font-family;
+    margin: 0;
+    padding: 0;
+}
+p,li,a{
+    font-size: 1em;
+    color: $white-color;
+}
+span{
+    font-size: 0.8em;
+    color: $white-color;
+}

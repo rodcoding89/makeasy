@@ -1,0 +1,25 @@
+<div class="home">
+    <div class="content">
+        
+        <div class="innerpage">
+            <form action="" method="get" class="search">
+                <input autocomplete="off" type="search" placeholder="Faites vos Recherches" translate 
+                value="{{categvalue}}" [(ngModel)] = "searchText" name="searchText" (keypress) = "filterKeypress()"><i class="fas fa-search"></i>
+                <div class="pipefilter" *ngIf="isFilter" (mouseleave) = "hideFilterBlock()">
+                    
+                    <div class="categ" *ngFor =" let c of categorys">
+                        <div (click)="getItemCategValue(categ,c.name)" class = "categitem" *ngFor="let categ of c.souscategory | searchFilter: searchText"> {{categ}}</div>
+                    </div>    
+                    
+                </div>
+                <input (keypress) = "locationKeypress()" value="{{locatiovalue}}" autocomplete="off" type="text" [(ngModel)] = "searchLocation" name = "searchLocation" placeholder="Indiquer la Region" translate><i class="fas fa-map-marker-alt"></i>
+                <div class="locationblock" (mouseleave) = "hideLocationBlock()" *nfIf="isLocation" >
+                    <div (click)="locationItem(l)" class="locationItem" *ngFor="let l of location | searchFilter: searchLocation">{{l}}</div>
+                </div>
+                <div class="go"><p translate>GO</p></div>
+            </form>
+        
+
+    </div>
+</div>
+</div>

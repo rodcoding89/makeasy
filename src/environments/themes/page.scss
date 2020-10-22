@@ -1,0 +1,155 @@
+@import '../../scss/variable.scss';
+@mixin page() { // Si aucune valeur n'est précisée alors $margin vaut 10p
+    .over{
+        height: 25px;
+        width: 100%;
+        background-color: $white-color;
+    }
+    .page{
+        width: 100%;
+        height: 150px;
+        background-color: $header-color;
+        .language{
+            display: flex;
+            justify-content: flex-end;
+            .firstLang{
+                margin-right: 10px;
+                cursor: pointer;
+            }
+            .activeLang{
+                border-bottom: 1px solid black;
+            }
+        }
+        nav{
+            .fas,.far{
+                color: black;
+                padding-left: 5px;
+            }
+            .active{
+                color: black;
+            }
+            .navi{
+                padding: 0;
+                margin: 0;
+                display: flex;
+                justify-content: space-between;
+            }
+             a{
+                text-decoration: none;
+                
+                &:hover{
+                    color: black;
+                }
+            }
+
+        }
+        
+        .head{
+            @include centerEl();
+            .language{
+                padding: 15px 0 45px;
+                text-align: right;
+                width: 100%;
+            }
+        }
+        .auth{
+            @include decorNavi(10%,37%,0);
+            z-index: 11;
+            a{
+                text-decoration: none;
+            }
+            div{
+                padding: 10px 15px 10px;
+            }
+             .fa-user{
+                 color: $white-color;
+             }
+         } 
+    }
+    
+}
+@mixin decorNavi($right,$top,$left) {
+    position: absolute;
+    background-color: black;
+    box-shadow: 0px 0px 4px 2px #ff0000ff;
+    display: block;
+    z-index: 1;
+    color: #fff;
+    font-size: 0.8em;
+    right: 46px;
+    padding: 15px;
+    top: 125px;
+}
+@mixin centerEl() {
+    width: 80%;
+    margin: 0 auto;
+}
+@mixin bgimage($url,$repeat,$position,$size) {
+    background-image: url($url);
+    background-repeat: $repeat;
+    background-position: $position;
+    background-size: $size;
+}
+@mixin input($width,$height,$bgcolor,$color,$mtop:50px) {
+    width: $width;
+    font-size: 1em;
+    position: relative;
+    height: $height;
+    background-color: $bgcolor;
+    margin-top: $mtop;
+    border-radius: 5px;
+    padding-left: 10px;
+    border: 1px solid $header-color;
+    color: $color;
+}
+@mixin pDecor($width) {
+    margin-top: 50px;
+    border-radius: 5px;
+    border: 1px solid $header-color;
+    width: $width;
+    height: 45px;
+    cursor: pointer;
+    padding-left: 10px;
+    position: relative;
+}
+@mixin subnavi() {
+    background-color: black;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+@mixin subnavigation() {
+    .over .actionsubnavi nav .actionActive{
+        color: $header-color;
+        .fas{
+            color: $white-color;
+        }
+    }
+    .over{
+        width: 100%;
+        background-color: black;
+        .actionsubnavi{
+            position: relative;
+            nav{
+                @include subnavi();
+                a{
+                    text-decoration: none;
+                    height: 45px;
+                    color: $white-color;
+                    font-size: 0.8em;
+                    padding-top: 20px;
+                    &:hover{
+                        color: $header-color;
+                        .fas{
+                            color: $white-color;
+                        }
+                    }
+                    .fas{
+                        color: $header-color;
+                    }
+                }
+            }
+            @include centerEl();
+        }
+    }
+}

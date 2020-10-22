@@ -1,0 +1,117 @@
+@import '../../scss/variable.scss';
+@import '../themes/page.scss';
+@mixin pagehome() {
+    .home{
+        width: 100%;
+        height: 500px;
+        background-color: black;
+    }
+    .innerpage{
+        @include centerEl();
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        form{
+            width: 100%;
+            display: flex;
+            position: relative;
+            justify-content: space-between;
+        }
+        .myform{
+            width: 72%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .categoriContent{
+            position: absolute;
+            width: 98%;
+            top: 110px;
+            margin-top: 20px;
+            display: flex;
+            box-shadow: 0px 0px 4px 2px $header-color;
+            border-radius: 5px;
+            padding: 20px;
+            background-color: black;
+            justify-content: space-between;
+            .element{
+                cursor: pointer;
+                color: $white-color;
+            }
+        }
+        .category{
+            @include pDecor(22%);
+            .fa-caret-down{
+                position: absolute;
+                right: 10px;
+            }
+        }
+        .filtre{
+            @include pDecor(11%);
+            margin-right: 5%;
+        }
+        .search input{
+            @include input(40%,45px,black,$white-color);
+            
+        }
+        .fa-search{
+            position: absolute;
+            bottom: 16px;
+            right: 395px;
+            color: $white-color;
+        }
+        .fa-map-marker-alt{
+            position: absolute;
+            color: $white-color;
+            bottom: 19px;
+            right: 105px;
+        }
+        .fas{
+            padding-right: 10px;
+        }
+        .elefiltre{
+            position: absolute;
+            top: 105px;
+            padding: 20px;
+            box-shadow: 0px 0px 4px 2px $header-color;
+            margin-top: 20px;
+            .amount{
+                width: 40%;
+                input{
+                    @include input(100%,45px,black,$white-color);
+                    margin-top: 0;
+                    margin-bottom: 15px;
+                }
+            }
+            .status{
+                display: flex;
+                justify-content: space-between;
+                position: relative;
+                width: 40%;
+                .new{
+                    position: absolute;
+                    top: 15px;
+                    left: 45px;
+                }
+                .occasion{
+                    position: absolute;
+                    top: 15px;
+                    right: -25px;
+                }
+            }
+            .location{
+                input{
+                    @include input(40%,45px,black,$white-color);
+                    margin-top: 0;
+                    margin-bottom: 15px;  
+                }
+            }
+        }
+        .apply{
+            @include input(41%,45px,black,$white-color);
+            text-align: center;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+    }
+
+}
