@@ -48,7 +48,7 @@
             color: $white-color;
         }
         input{
-            @include input(97%,45px,black,$white-color);
+            @include input(97%,45px,$content-color,$white-color);
             margin-top: 0;
             margin-bottom: 15px;
         }
@@ -62,11 +62,12 @@
         
     }
     .authcontent{
-        background-color: black;
+        background-color: $content-color;
         height: 35px;
         margin-top: -20px;
         .logingrid{
-            background-color: black;
+            //background-color: $content-color;
+            background-color: rgba($color: #000, $alpha: 0.5);
             height: 565px;
             width: 60%;
             position: absolute;
@@ -105,7 +106,7 @@
             color: $white-color;
         }
         input{
-            @include input(95%,45px,black,$white-color,0);
+            @include input(95%,45px,$content-color,$white-color,0);
             margin-bottom: 15px;
         }
         .text{

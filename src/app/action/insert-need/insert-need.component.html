@@ -1,1 +1,97 @@
-<p>insert-need works!</p>
+<div class="insertService">
+    <div class="formcontent">
+        <div class="followForm">
+            <div class="serviceData" *ngIf="isServiceData">
+                <h3 translate>Étape d'insertion des données</h3>
+                <h5 translate>Étape 1</h5>
+                <p translate>Données Concernant l'ajout du besoin</p>
+                <div class="circle"><b>1</b></div>
+            </div>
+           <div class="addressdata" *ngIf="isAddressData">
+                <div class="line"></div>
+                <div class="circle1"><b>2</b></div>
+                <h5 translate>Étape 2</h5>
+                <p translate>Données Concernant votre addresse</p>
+           </div>
+           <div class="imgdata" *ngIf="isImageData">
+                <div class="circle1"><b>2</b></div><br/>
+                <div class="line1"></div>
+                <div class="circle3"><b>3</b></div>
+                <h5 translate>Étape 3</h5>
+                <p translate>Insertion des Images et validation des données</p>
+           </div>
+        </div>
+        <div class="formblock">
+            <form action="" method="post">
+                <div class="block1" [@leftright1]="stateName">
+                    <h3>Remplissez les données nécessaire pour l'ajout du besoin</h3>
+                    <div class="reaserchService">
+                        <p translate>Nom du besoin *</p>
+                        <input type="text" name="" id="" placeholder="Tourisme">
+                    </div>
+                    <div class="serviceDescription">
+                        <p translate>Description du besoin *</p>
+                        <textarea  name="" placeholder="J'aimerais faire du tourisme au cameroun et ne sais pas vers qui m'orienter" id="" cols="30" rows="10"></textarea>
+                    </div>
+                    <div class="serviceDescription1">
+                        <p translate>Description des Services déja rendus Quelques exemples suffisent</p>
+                        <textarea name="" placeholder="Entrer la Description des Services Anterieurs" id="" cols="30" rows="10"></textarea>
+                    </div>
+                    <div class="next" (click)="moveRight()"><p translate>SUIVANT</p></div>
+                </div>
+                <div class="block2" [@leftright2]="stateName1">
+                    <h3>Remplissez l'address de localisation</h3>
+                    <div class="distric">
+                        <p translate>Le Quartier *</p>
+                        <input type="text" name="" id="" placeholder="Indiquer le Quartier">
+                    </div>
+                    <div class="city">
+                        <p translate>La Ville *</p>
+                        <input type="text" name="" id="" placeholder="Indiquer la Ville">
+                    </div>
+                    <div class="bpostal">
+                        <p translate>La Boite Postal</p>
+                        <input type="text" name="" id="" placeholder="Indiquer la Boite postale">
+                    </div>
+                    <div class="region">
+                        <p translate>La Region *</p>
+                        <input type="text" name="" id="" placeholder="Indiquer la Region">
+                    </div>
+                    <div class="navibt">
+                        <div class="preview" (click)="preview()"><p translate>PRÉCÉDENT</p></div>
+                        <div class="next" (click)="otherNext()"><p translate>SUIVANT</p></div>
+                    </div>
+                   
+                </div>
+                <div class="block3" [@leftright3]="stateName2">
+                    <h3>Ajouter des Images Correspondant au Service que vous proposé</h3>
+                    <div class="uploadimage">
+                        <div class="imgcontent" (click)="fileInput.click()" drapDropFile (onFileDropped) ="uploadFile($event)">
+                            <span translate>Chargé des Images</span>
+                            <input hidden type="file" #fileInput (change)="uploadFile($event.target.files)">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                        </div>
+                        <div class="imagelist">
+                            <div class="item clearfix" *ngFor ="let file of files; let i = index">
+                                <ul>
+                                    <li>{{file}}
+                                        <span class="delete-file" (click)="deleteAttachement(i)">
+                                            <i class="fas fa-trash"></i>
+                                        </span>
+                                    </li>
+                                </ul>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <p translate>Si vous ne disposez pas d'image, vous pouvez sauter cette étape et valider l'insertion de vos données</p>
+                    <div class="navibt">
+                        <div class="preview" (click)="otherPreview()"><p translate>PRÉCÉDENT</p></div>
+                        <div class="saveData"><p translate>ENREGISTRER LES DONNÉES SAISIS</p></div>
+                    </div>
+                </div>
+                  
+            </form>
+        </div>
+    </div>
+</div>

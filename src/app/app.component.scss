@@ -15,3 +15,8 @@ a{
 .subnavi{
     display: none;
 }
+.customerblock, .company, .individual{
+    &:hover{
+        background-color: brown;
+    }
+}

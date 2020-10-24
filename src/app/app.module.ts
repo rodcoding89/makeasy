@@ -25,6 +25,7 @@ import { CompanyComponent } from './authentification/company/company.component';
 import { IndividualComponent } from './authentification/individual/individual.component';
 import { PageNotFoundComponent } from './authentification/page-not-found/page-not-found.component';
 import { SearchFilterPipe } from "./pipe/searchFilter";
+import { DragDropDirective } from "./directive/drapdrop.directive";
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { SearchFilterPipe } from "./pipe/searchFilter";
     CompanyComponent,
     IndividualComponent,
     PageNotFoundComponent,
-    SearchFilterPipe
+    SearchFilterPipe,
+    DragDropDirective
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,188 @@
+@import '../../scss/variable.scss';
+@import '../../environments/themes/page.scss';
+
+@mixin insertData() {
+    .formcontent{
+        display: flex;
+        justify-content: space-between;
+        @include centerEl();
+    }
+    .block1,.block2,.block3{
+        text-align: center;
+    }
+    .insertService{
+        background-color: rgba($color: lavender, $alpha: 1.0);
+        //background-color: rgba($color: #000000, $alpha: 0.5);
+       
+    }
+    .formblock{
+        width: 70%;
+        background-color: rgba($color: #fff, $alpha: 0.5);
+        position: relative;
+    }
+    .followForm{
+        width: 30%;
+        background-color: $header-color;
+        text-align: center;
+        color: $white-color;
+        padding-top: 60px;
+        height: 658px;
+        position: relative;
+        padding: 30px ;
+        .circle, .circle1, .circle3{
+            background-color: $white-color;
+            width: 50px;
+            height: 50px;
+            border-radius: 35px;
+            display: inline-block;
+            color: $content-color;
+            position: relative;
+            
+        }
+        .circle,.circle3{
+            b{
+                position: absolute;
+                left: 21px;
+                top: 15px;
+                z-index: 1;
+            }
+        }
+        .circle1{
+            width: 25px;
+            height: 25px;
+            b{
+                position: absolute;
+                left: 9px;
+                top: 3px;
+                z-index: 1;
+            }
+        }
+        .addressdata,.imgdata{
+            margin-top: 40px;
+        }
+        .circle3{
+            margin-top: 40px;
+        }
+        
+        .imgdata .line1{
+            top: 406px;
+        }
+        .line,.line1{
+            background-color: $white-color;
+            width: 2px;
+            height: 119px;
+            display: inline-block;
+            position: absolute;
+            left: 183px;
+            top: 165px;
+        }
+    }
+    .block1,.block2,.block3{
+        margin: 50px;
+        padding: 30px;
+        background-color: rgba($color: #000000, $alpha: 0.1);
+        position: absolute;
+        width: 79%;
+        input{
+            @include input(80%,40px,$white-color,block,0,$white-color);
+            &:focus-within{
+                border: 1px solid gray;
+                outline: none;
+            }
+        }
+        input:focus-visible{
+            border: 1px solid gray;
+        }
+        p{color: $content-color;}
+        textarea{
+            @include textarea(79%,80px,$white-color);
+            &:focus{
+                border-color: gray;
+                outline: none;
+            }
+        }
+        h3{
+            margin-bottom: 50px;
+        }
+        .serviceName, .serviceDescription, .serviceDescription1{
+            margin-bottom: 15px;
+        }
+        .serviceName p, .serviceDescription p, .serviceDescription1 p, .serviceDescription1 p,
+        .city p, .distric p, .bpostal p, .region, .produitName p,.produitPrice p,.etatProduit p,
+        .produitDescription p,.bidName p,.bidPrice p,.bidDescription p{
+            text-align: left;
+            padding-left: 50px;
+            width: 100%;
+        }
+        .next{
+            @include pDecor(81%,gray);
+            display: inline-block;
+            margin-top: 30px;
+        }
+    }
+    .block2,.block3{
+        position: absolute;
+        .next,.preview{
+            @include pDecor(25%,gray);
+            display: inline-block;
+            margin-top: 30px;
+        }
+        .navibt{
+            display: flex;
+            justify-content: space-between;
+            margin: 0 52px 0;
+        }
+       
+    }
+    .block3{
+        .saveData{
+            @include pDecor(65%,gray);
+            display: inline-block;
+            margin-top: 30px;
+        }
+        .navibt{
+            margin: 0;
+        }
+        .uploadimage{
+            height: 315px;
+            
+        }
+        .imgcontent{
+            height: calc(315px / 3 + 315px / 3);
+            &:hover{
+                cursor: pointer;
+                background-color: #9ecbec !important;
+                opacity: 0.8;
+            }
+            span{
+                color: $content-color;
+                padding-right: 10px;
+            }
+        }
+        .fas{
+            margin-top: calc(210px / 2);
+        }
+        .item{
+            display: flex;
+            justify-content: space-between;
+            height: 25px;
+            &:after{
+                content: "";
+                clear: both;
+                display: table;
+            }
+        }
+    }
+    .check{
+        display: flex;
+        justify-content: space-between;
+        width: 85%;
+        margin: 0 50px;
+        position: relative;
+    }
+    .check .cbox1, .check .cbox2{
+        width: 10%;
+        height: 20px;
+    }
+
+}

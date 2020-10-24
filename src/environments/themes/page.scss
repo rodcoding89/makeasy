@@ -17,16 +17,16 @@
                 cursor: pointer;
             }
             .activeLang{
-                border-bottom: 1px solid black;
+                border-bottom: 1px solid $content-color;
             }
         }
         nav{
             .fas,.far{
-                color: black;
+                color: $content-color;
                 padding-left: 5px;
             }
             .active{
-                color: black;
+                color: $content-color;
             }
             .navi{
                 padding: 0;
@@ -38,7 +38,7 @@
                 text-decoration: none;
                 
                 &:hover{
-                    color: black;
+                    color: $content-color;
                 }
             }
 
@@ -68,9 +68,16 @@
     }
     
 }
+@mixin textarea($width,$height,$bcolor) {
+    border-radius: 5px;
+    width: $width;
+    padding: 10px;
+    height: $height;
+    border: 1px solid $bcolor;
+}
 @mixin decorNavi($right,$top,$left) {
     position: absolute;
-    background-color: black;
+    background-color: $content-color;
     box-shadow: 0px 0px 4px 2px #ff0000ff;
     display: block;
     z-index: 1;
@@ -90,7 +97,7 @@
     background-position: $position;
     background-size: $size;
 }
-@mixin input($width,$height,$bgcolor,$color,$mtop:50px) {
+@mixin input($width,$height,$bgcolor,$color,$mtop:50px,$hcolor:$header-color) {
     width: $width;
     font-size: 1em;
     position: relative;
@@ -99,13 +106,13 @@
     margin-top: $mtop;
     border-radius: 5px;
     padding-left: 10px;
-    border: 1px solid $header-color;
+    border: 1px solid $hcolor;
     color: $color;
 }
-@mixin pDecor($width) {
+@mixin pDecor($width,$bcolor:$header-color) {
     margin-top: 50px;
     border-radius: 5px;
-    border: 1px solid $header-color;
+    border: 1px solid $bcolor;
     width: $width;
     height: 45px;
     cursor: pointer;
@@ -113,7 +120,7 @@
     position: relative;
 }
 @mixin subnavi() {
-    background-color: black;
+    background-color: $content-color;
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -127,7 +134,7 @@
     }
     .over{
         width: 100%;
-        background-color: black;
+        background-color: $content-color;
         .actionsubnavi{
             position: relative;
             nav{

@@ -1,0 +1,7 @@
+@import '../../../environments/themes/insertPage.scss';
+@include insertData();
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}

@@ -10,8 +10,18 @@ body{
 p,li,a{
     font-size: 1em;
     color: $white-color;
+    line-height: 1.4;
 }
 span{
     font-size: 0.8em;
     color: $white-color;
 }
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  body{
+      overflow-x: hidden;
+  }
