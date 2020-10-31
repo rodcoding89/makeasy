@@ -1,0 +1,146 @@
+@import '../../scss/variable.scss';
+@import '../../environments/themes/page.scss';
+
+.content{
+    position: relative;
+    .logo{
+        @include bgimage("/assets/img/logo.png",no-repeat,null,null);
+        width: 24%;
+        height: 80px;
+        position: absolute;
+        top: -130px;
+      }
+    .navigation{
+        position: absolute;
+        top: -73px;
+        right: 0px;
+        display: flex;
+        width: 35%;
+        justify-content: space-between;
+        a{
+            text-decoration: none;
+        }
+        .deconn,.feedback,.person{
+            font-size: 0.8em;
+            padding: 10px;
+            color: $white-color;
+            &:hover{
+                background-color: darkgray;
+            }
+        }
+        .message{
+            color: $white-color;
+            cursor: pointer;
+            &:hover{
+                color: $content-color;
+            }
+            i{
+                padding-left: 5px;
+                color: $content-color;
+            }
+        }
+    }
+    .headerblock{
+        @include centerEl();
+        position: relative;
+        .headblock1{
+          
+        }
+    }
+    .innercontent{
+        background-color: lavender;
+        .firstblock{
+            .subhead{
+                position: absolute;
+                top: -37px;
+                left: 25%;
+                width: 17%;
+                display: flex;
+                justify-content: space-between;
+            }
+            .name{
+                padding: 45px 11px 0 0;
+            }
+            .userauth{
+                width: 95px;
+                height: 95px;
+                background-color: black;
+                border-radius: 58px;
+                box-shadow: 0px 0px 3px 2px $header-color;
+            }
+        }
+        .otherblock{
+            width: 80%;
+            left: 10%;
+            top: 161px;
+            position: absolute;
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-gap: 30px 40px;
+            .item{
+                height: 205px;
+                background-color: black;
+                box-shadow: 0px 0px 3px 2px $header-color;
+                border-radius: 5px;
+                cursor: pointer;
+                padding: 20px;
+                h3{
+                    color: $white-color;
+                }
+                .icon{
+                    margin: 15px 0;
+                }
+                .fas{
+                    color: $white-color;
+                }
+                span{
+                    float: right;
+                    color: $header-color;
+                }
+            }
+        }
+    }
+    .personalized{
+        position: absolute;
+        left: 10%;
+        top: 170px;
+        width: 100%;
+    }
+    .personalizedcontent{
+        width: 74%;
+        
+        box-shadow: 0px 0px 3px 2px $header-color;
+        background-color: $content-color;
+        
+        border-radius: 5px;
+        padding: 40px;
+        h2{
+            color: $white-color;
+        }
+        .textcontact,.myexchange,.doingservice,.proposedService{
+            margin-bottom: 50px;
+        }
+    }
+    .usercontent{
+        height: 32px;
+        width: 33px;
+    }
+    .contentblock{
+        position: relative;
+        .innercontentblock{
+            @include centerEl();
+        }
+        .back,.activepage{
+            padding: 10px;
+            position: absolute;
+            right: 20%;
+            top: -110px;
+            box-shadow: 0 3px 2px $header-color;
+            cursor: pointer;
+        }
+        .activepage{
+            position: relative;
+        }
+    }
+    
+}

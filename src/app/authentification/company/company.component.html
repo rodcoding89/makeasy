@@ -14,7 +14,8 @@
                 <div class="textcontent" *ngIf="isLoginText">
                     <h2 translate>Connexion</h2>
                     <h3 translate>Bienvenu chez Makeasy</h3>
-                    <p translate>Si vous avez deja un compte utilisateur alors connecté vous et profité de nos Services proposés</p>
+                    <p translate>Avec un Compte vous avez la possibilité de poster vos Annonces ou encore proposer vos services afin d'attirer des observateurs sur vous. le tout Gratuitement</p>
+                    <span translate>Si vous avez deja un compte utilisateur alors connecté vous et profité de nos Services proposés</span>
                     <div class="conn" (click)="connexion($event)"><p translate>Je me connecte et j'enprofite</p></div>
                 </div>
             </div>
@@ -23,48 +24,102 @@
             <div class="gridcontent" *ngIf="isLogin">
                 <h3 translate>Inseré vos données de connexion</h3>
                 <p translate class="text">Connecter vous de maniere sécurisé et sans sourcis</p>
-                <form action="" method="post">
-                    <div class="email">
-                        <p translate>Email</p>
-                        <input type="email" placeholder="compagnie@mail.com">
+                <form action="" method="post" [formGroup] = "loginForm" (ngSubmit) = "onSubmit()">
+                    <div class="lemail">
+                        <p translate>Email de votre company</p>
+                        <input autocomplete="off" id="lemail" required type="email" placeholder="yourmail@mail.com" formControlName= "lemail" name="lemail" [ngClass]="{ 'is-invalid': loginForm.get('lemail').errors }">
+                        <div *ngIf="isError && loginForm.get('lemail').errors && (loginForm.get('lemail').dirty || loginForm.get('lemail').touched)" class="error">
+                            <div *ngIf="loginForm.get('lemail').errors.required" translate>Le Mail Address est reccommandé</div>
+                            <div *ngIf="loginForm.get('lemail').errors.email" translate>Votre Email est Invalide</div>
+                        </div>
+                        <div class="success" *ngIf="loginForm.get('lemail').valid" translate>
+                            Parfait
+                        </div>
                     </div>
-                    <div class="pass">
+                    <div class="lpass">
                         <p translate>Mot de passe</p>
-                        <input type="password" placeholder="12345">
+                        <input required type="password" placeholder="********" formControlName = "lpass">
+                        <div *ngIf="isError && loginForm.get('lpass').errors && (loginForm.get('lpass').dirty || loginForm.get('lpass').touched)" class="error">
+                            <div *ngIf="loginForm.get('lpass').errors.required" translate>Le Mot de pass est reccommandé</div>
+                            <div *ngIf="loginForm.get('lpass').errors.minlength" translate>Votre Mot de pass doit contenir minimum 6 charactére</div>
+                        </div>
+                        <div class="success" *ngIf="loginForm.get('lpass').valid" translate>
+                            Parfait
+                        </div>
                     </div>
-                    <div class="sendBt"><p translate>CONNEXION</p></div>
+                    <div class="sendBt"><button type="submit" translate [disabled] = "!loginForm.valid">CONNEXION</button></div>
                 </form>
             </div>
             <div class="gridsign" *ngIf="isSign">
-                <h3 translate>Inseré vos données d'inscription</h3>
-                <p translate class="text">ces données seront enregistrés dans notre base de donnée de maniére securisé</p>
-                <form action="" method="post">
-                    <div class="name">
-                        <p translate>Nom de la Compagnie</p>
-                        <input type="text" placeholder="Andis">
-                    </div>
-                    <div class="lname">
-                        <p translate>Votre Nom et Prénom</p>
-                        <input type="text" placeholder="Prenom">
-                    </div>
-                    <div class="email">
-                        <p translate>Email de Votre Compagnie</p>
-                        <input type="email" placeholder="yourmail@mail.com">
-                    </div>
-                    <div class="tel">
-                        <p translate>Télephone Portable ou fix</p>
-                        <input type="tel" placeholder="00785565665">
-                    </div>
-                    <div class="pass">
-                        <p translate>Mot de passe</p>
-                        <input type="password" placeholder="12345">
-                    </div>
-                    <div class="cpass">
-                        <p translate>Confirmation du mot de passe</p>
-                        <input type="pass" placeholder="12345">
-                    </div>
-                    <div class="sendBtsign"><p translate>INSCRIPTION</p></div>
-                </form>
+                <div class="contentblock">
+                    <h3 translate>Inseré vos données d'inscription</h3>
+                    <p translate class="text">ces données seront enregistrés dans notre base de donnée de maniére securisé</p>
+                    
+                    <form action="" method="post" [formGroup] = "signForm" (ngSubmit) = "onSignSubmit()">
+                        <div class="name">
+                            <p translate>Nom de la Compagnie*</p>
+                            <input type="text" placeholder="Andis" required formControlName="fname">
+                            <div *ngIf="isSignError && signForm.get('fname').errors && (signForm.get('fname').dirty || signForm.get('fname').touched)" class="error">
+                                <div *ngIf="signForm.get('fname').errors.required" translate>Le Nom de la Compagnie est obligatoir</div>
+                                <div *ngIf="signForm.get('fname').errors.minlength" translate>Le Nom doit avoir au moin 3 charactéres</div>
+                            </div>
+                            <div class="success" *ngIf="signForm.get('fname').valid" translate>
+                                Parfait
+                            </div>
+                        </div>
+                        <div class="lname">
+                            <p translate>Votre Nom et Prénom*</p>
+                            <input type="text" placeholder="Prenom" required formControlName = "lname">
+                            <div *ngIf="isSignError && signForm.get('lname').errors && (signForm.get('lname').dirty || signForm.get('lname').touched)" class="error">
+                                <div *ngIf="signForm.get('lname').errors.required" translate>Le Nom et Prénom est obligatoir</div>
+                                <div *ngIf="signForm.get('lname').errors.minlength" translate>Votre Nom ou Prénom doit avoir au moin 3 charactéres</div>
+                            </div>
+                            <div class="success" *ngIf="signForm.get('lname').valid" translate>
+                                Parfait
+                            </div>
+                        </div>
+                        <div class="email">
+                            <p translate>Email de Votre Compagnie*</p>
+                            <input type="email" placeholder="yourmail@mail.com" required formControlName="email">
+                            <div *ngIf="isSignError && signForm.get('email').errors && (signForm.get('email').dirty || signForm.get('email').touched)" class="error">
+                                <div *ngIf="signForm.get('email').errors.required" translate>Le Mail Address est obligatoir</div>
+                                <div *ngIf="signForm.get('email').errors.email" translate>Email de la Compagnie est Invalide</div>
+                            </div>
+                            <div class="success" *ngIf="signForm.get('email').valid" translate>
+                                Parfait
+                            </div>
+                        </div>
+                        <div class="tel">
+                            <p translate>Télephone Portable ou fix*</p>
+                            <input type="tel" placeholder="00785565665" required formControlName = "tel">
+                            <div *ngIf="isSignError && signForm.get('tel').errors && (signForm.get('tel').dirty || signForm.get('tel').touched)" class="error">
+                                <div *ngIf="signForm.get('tel').errors.required" translate>Le Numero de Téléphone est obligatoir</div>
+                                <div *ngIf="signForm.get('tel').errors.minlength" translate>Votre Numéro doit avoir au moin 8 Chiffres</div>
+                            </div>
+                            <div class="success" *ngIf="signForm.get('tel').valid" translate>
+                                Parfait
+                            </div>
+                        </div>
+                        <div class="pass">
+                            <p translate>Mot de passe*</p>
+                            <input type="password" placeholder="******" required formControlName ="spass">
+                            <div *ngIf="isSignError && signForm.get('spass').errors && (signForm.get('spass').dirty || signForm.get('spass').touched)" class="error">
+                                <div *ngIf="signForm.get('spass').errors.required" translate>Le Mot de pass est reccommandé</div>
+                                <div *ngIf="signForm.get('spass').errors.minlength" translate>Votre Mot de pass doit contenir minimum 6 charactére</div>
+                            </div>
+                            <div class="success" *ngIf="signForm.get('spass').valid" translate>
+                                Parfait
+                            </div>
+                        </div>
+                        <div class="cpass">
+                            <p translate>Confirmation du Mot de Passe*</p>
+                            <input type="password" placeholder="******" required (change)="change($event)">
+                            <div class="error" translate *ngIf="isConfirmError">Les Mots de passe ne correspondent pas</div>
+                        </div>
+                        <div class="sendBtsign"><button type="submit" translate [disabled] = "!signForm.valid">INSCRIPTION</button></div>
+                    </form>
+                </div>
+                
             </div>  
         </div>
     </div> 

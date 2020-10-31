@@ -1,0 +1,2024 @@
+[
+    {
+        "city" : "Douala",
+        "latitude": "",
+        "longitude": "",
+        "region": "Litoral"
+    },
+    {
+        "city" : "Yaoundé",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Dikome-Balue",
+        "latitude": "",
+        "longitude": "",
+        "region": "Sud-Ouest"
+    },
+    {
+        "city" : "Ndikiniméki",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Touloum",
+        "latitude": "",
+        "longitude": "",
+        "region": "Extrême-Nord"
+    },
+    {
+        "city" : "Ndoukoula",
+        "latitude": "",
+        "longitude": "",
+        "region": "Extrême-Nord"
+    },
+    {
+        "city" : "Nitoukou",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Nguelemendouka",
+        "latitude": "",
+        "longitude": "",
+        "region": "Est"
+    },
+    {
+        "city" : "Mengueme",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Nganha",
+        "latitude": "",
+        "longitude": "",
+        "region": "Adamaoua"
+    },
+    {
+        "city" : "Darak",
+        "latitude": "",
+        "longitude": "",
+        "region": "Extrême-Nord"
+    },
+    {
+        "city" : "Mengang",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Dargala",
+        "latitude": "",
+        "longitude": "",
+        "region": "Extrême-Nord"
+    },
+    {
+        "city" : "Bamenda",
+        "latitude": "",
+        "longitude": "",
+        "region": "Nord-Ouest"
+    },
+    {
+        "city" : "Martap",
+        "latitude": "",
+        "longitude": "",
+        "region": "Adamaoua"
+    },
+    {
+        "city" : "Kontcha",
+        "latitude": "",
+        "longitude": "",
+        "region": "Adamaoua"
+    },
+    {
+        "city" : "Maroua",
+        "latitude": "",
+        "longitude": "",
+        "region": "Extrême-Nord"
+    },
+    {
+        "city" : "Nkongsamba",
+        "latitude": "",
+        "longitude": "",
+        "region": "Litoral"
+    },
+    {
+        "city" : "sa a",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Fotokol",
+        "latitude": "",
+        "longitude": "",
+        "region": "Extrême-Nord"
+    },
+    {
+        "city" : "Esse",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Mfou",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Meri",
+        "latitude": "",
+        "longitude": "",
+        "region": "Extrême-Nord"
+    },
+    {
+        "city" : "Nkolmetet",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Nkolafamba",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Bafut",
+        "latitude": "",
+        "longitude": "",
+        "region": "Nord-Ouest"
+    },
+    {
+        "city" : "Soa",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Bafoussam",
+        "latitude": "",
+        "longitude": "",
+        "region": "Ouest"
+    },
+    {
+        "city" : "Bakou",
+        "latitude": "",
+        "longitude": "",
+        "region": "Ouest"
+    },
+    {
+        "city" : "Ngaoundéré",
+        "latitude": "",
+        "longitude": "",
+        "region": "Adamaoua"
+    },
+    {
+        "city" : "Baré-Bakem",
+        "latitude": "",
+        "longitude": "",
+        "region": "Litoral"
+    },
+    {
+        "city" : "Bonaléa",
+        "latitude": "",
+        "longitude": "",
+        "region": "Litoral"
+    },
+    {
+        "city" : "Dibombari",
+        "latitude": "",
+        "longitude": "",
+        "region": "Litoral"
+    },
+    {
+        "city" : "Messamena",
+        "latitude": "",
+        "longitude": "",
+        "region": "Est"
+    },
+    {
+        "city" : "Bengbis",
+        "latitude": "",
+        "longitude": "",
+        "region": "Sud"
+    },
+    {
+        "city" : "Eyumodjock",
+        "latitude": "",
+        "longitude": "",
+        "region": "Sud-Ouest"
+    },
+    {
+        "city" : "Ndu",
+        "latitude": "",
+        "longitude": "",
+        "region": "Nord-Ouest"
+    },
+    {
+        "city" : "Misaje",
+        "latitude": "",
+        "longitude": "",
+        "region": "Nord-Ouest"
+    },
+    {
+        "city" : "Meyomessala",
+        "latitude": "",
+        "longitude": "",
+        "region": "Sud"
+    },
+    {
+        "city" : "Mindif",
+        "latitude": "",
+        "longitude": "",
+        "region": "Extrême-Nord"
+    },
+    {
+        "city" : "Mindourou",
+        "latitude": "",
+        "longitude": "",
+        "region": "Est"
+    },
+    {
+        "city" : "Meyomessi",
+        "latitude": "",
+        "longitude": "",
+        "region": "Sud"
+    },
+    {
+        "city" : "Mintom",
+        "latitude": "",
+        "longitude": "",
+        "region": "Sud"
+    },
+    {
+        "city" : "Oveng",
+        "latitude": "",
+        "longitude": "",
+        "region": "Sud"
+    },
+    {
+        "city" : "Djoum",
+        "latitude": "",
+        "longitude": "",
+        "region": "Sud"
+    },
+    {
+        "city" : "Bertoua",
+        "latitude": "",
+        "longitude": "",
+        "region": "Est"
+    },
+    {
+        "city" : "Loum",
+        "latitude": "",
+        "longitude": "",
+        "region": "Litoral"
+    },
+    {
+        "city" : "Kumba",
+        "latitude": "",
+        "longitude": "",
+        "region": "Sud-Ouest"
+    },
+    {
+        "city" : "Édea",
+        "latitude": "",
+        "longitude": "",
+        "region": "Litoral"
+    },
+    {
+        "city" : "Bana",
+        "latitude": "",
+        "longitude": "",
+        "region": "Ouest"
+    },
+    {
+        "city" : "Bandja",
+        "latitude": "",
+        "longitude": "",
+        "region": "Ouest"
+    },
+    {
+        "city" : "Mbven",
+        "latitude": "",
+        "longitude": "",
+        "region": "Nord-Ouest"
+    },
+    {
+        "city" : "Mbonge",
+        "latitude": "",
+        "longitude": "",
+        "region": "Sud-Ouest"
+    },
+    {
+        "city" : "Mogodé",
+        "latitude": "",
+        "longitude": "",
+        "region": "Extrême-Nord"
+    },
+    {
+        "city" : "Koza",
+        "latitude": "",
+        "longitude": "",
+        "region": "Extrême-Nord"
+    },
+    {
+        "city" : "Kumbo",
+        "latitude": "",
+        "longitude": "",
+        "region": "Nord-Ouest"
+    },
+    {
+        "city" : "Hina",
+        "latitude": "",
+        "longitude": "",
+        "region": "Extrême-Nord"
+    },
+    {
+        "city" : "Bourrha",
+        "latitude": "",
+        "longitude": "",
+        "region": "Extrême-Nord"
+    },
+    {
+        "city" : "Foumban",
+        "latitude": "",
+        "longitude": "",
+        "region": "Ouest"
+    },
+    {
+        "city" : "Mbouda",
+        "latitude": "",
+        "longitude": "",
+        "region": "Ouest"
+    },
+    {
+        "city" : "Bétaré-Oya",
+        "latitude": "",
+        "longitude": "",
+        "region": "Est"
+    },
+    {
+        "city" : "Dschang",
+        "latitude": "",
+        "longitude": "",
+        "region": "Ouest"
+    },
+    {
+        "city" : "Limbé",
+        "latitude": "",
+        "longitude": "",
+        "region": "Sud-Ouest"
+    },
+    {
+        "city" : "Ebolowa",
+        "latitude": "",
+        "longitude": "",
+        "region": "Sud"
+    },
+    {
+        "city" : "Efoulan",
+        "latitude": "",
+        "longitude": "",
+        "region": "Sud"
+    },
+    {
+        "city" : "Ebebda",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Kousséri",
+        "latitude": "",
+        "longitude": "",
+        "region": "Extrême-Nord"
+    },
+    {
+        "city" : "Logone-Birni",
+        "latitude": "",
+        "longitude": "",
+        "region": "Extrême-Nord"
+    },
+    {
+        "city" : "Guider",
+        "latitude": "",
+        "longitude": "",
+        "region": "Nord"
+    },
+    {
+        "city" : "Mayo-Darlé",
+        "latitude": "",
+        "longitude": "",
+        "region": "Adamaoua"
+    },
+    {
+        "city" : "Yagoua",
+        "latitude": "",
+        "longitude": "",
+        "region": "Extrême-Nord"
+    },
+    {
+        "city" : "Mayo-Baléo",
+        "latitude": "",
+        "longitude": "",
+        "region": "Adamaoua"
+    },
+    {
+        "city" : "Mayo-Oulo",
+        "latitude": "",
+        "longitude": "",
+        "region": "Nord"
+    },
+    {
+        "city" : "Ayos",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Mbalmayo",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Afanloum",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Bafang",
+        "latitude": "",
+        "longitude": "",
+        "region": "Ouest"
+    },
+    {
+        "city" : "Tiko",
+        "latitude": "",
+        "longitude": "",
+        "region": "Sud-Ouest"
+    },
+    {
+        "city" : "Bafia",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Wum",
+        "latitude": "",
+        "longitude": "",
+        "region": "Nord-Ouest"
+    },
+    {
+        "city" : "Ntui",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Kriki",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Biyouha",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Bikok",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Kribi",
+        "latitude": "",
+        "longitude": "",
+        "region": "Sud"
+    },
+    {
+        "city" : "Bibey",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Nfou",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "zhoa",
+        "latitude": "",
+        "longitude": "",
+        "region": "Nord-Ouest"
+    },
+    {
+        "city" : "Buéa",
+        "latitude": "",
+        "longitude": "",
+        "region": "Sud-Ouest"
+    },
+    {
+        "city" : "Zoétélé",
+        "latitude": "",
+        "longitude": "",
+        "region": "Sud"
+    },
+    {
+        "city" : "Biwong-Bulu",
+        "latitude": "",
+        "longitude": "",
+        "region": "Sud"
+    },
+    {
+        "city" : "Bibemi",
+        "latitude": "",
+        "longitude": "",
+        "region": "Nord"
+    },
+    {
+        "city" : "Dembo",
+        "latitude": "",
+        "longitude": "",
+        "region": "Nord"
+    },
+    {
+        "city" : "Baschéo",
+        "latitude": "",
+        "longitude": "",
+        "region": "Nord"
+    },
+    {
+        "city" : "Barndaké",
+        "latitude": "",
+        "longitude": "",
+        "region": "Nord"
+    },
+    {
+        "city" : "Kyé-Ossi",
+        "latitude": "",
+        "longitude": "",
+        "region": "Sud"
+    },
+    {
+        "city" : "Olamze",
+        "latitude": "",
+        "longitude": "",
+        "region": "Sud"
+    },
+    {
+        "city" : "Bamusso",
+        "latitude": "",
+        "longitude": "",
+        "region": "Sud-Ouest"
+    },
+    {
+        "city" : "Ma an",
+        "latitude": "",
+        "longitude": "",
+        "region": "Sud"
+    },
+    {
+        "city" : "Ambam",
+        "latitude": "",
+        "longitude": "",
+        "region": "Sud"
+    },
+    {
+        "city" : "Niete",
+        "latitude": "",
+        "longitude": "",
+        "region": "Sud"
+    },
+    {
+        "city" : "Mvengue",
+        "latitude": "",
+        "longitude": "",
+        "region": "Sud"
+    },
+    {
+        "city" : "Lolodorf",
+        "latitude": "",
+        "longitude": "",
+        "region": "Sud"
+    },
+    {
+        "city" : "Dir",
+        "latitude": "",
+        "longitude": "",
+        "region": "Adamaoua"
+    },
+    {
+        "city" : "Lokoundjé",
+        "latitude": "",
+        "longitude": "",
+        "region": "Sud"
+    },
+    {
+        "city" : "Diang",
+        "latitude": "",
+        "longitude": "",
+        "region": "Est"
+    },
+    {
+        "city" : "Campo",
+        "latitude": "",
+        "longitude": "",
+        "region": "Sud"
+    },
+    {
+        "city" : "Bipindi",
+        "latitude": "",
+        "longitude": "",
+        "region": "Sud"
+    },
+    {
+        "city" : "Alou",
+        "latitude": "",
+        "longitude": "",
+        "region": "Sud-Ouest"
+    },
+    {
+        "city" : "Somalomo",
+        "latitude": "",
+        "longitude": "",
+        "region": "Est"
+    },
+    {
+        "city" : "Ngoyla",
+        "latitude": "",
+        "longitude": "",
+        "region": "Est"
+    },
+    {
+        "city" : "Akom",
+        "latitude": "",
+        "longitude": "",
+        "region": "Sud"
+    },
+    {
+        "city" : "Goulfey",
+        "latitude": "",
+        "longitude": "",
+        "region": "Extrême-Nord"
+    },
+    {
+        "city" : "Ngoulemakong",
+        "latitude": "",
+        "longitude": "",
+        "region": "Sud"
+    },
+    {
+        "city" : "Mvangan",
+        "latitude": "",
+        "longitude": "",
+        "region": "Sud"
+    },
+    {
+        "city" : "Pitoa",
+        "latitude": "",
+        "longitude": "",
+        "region": "Nord"
+    },
+    {
+        "city" : "Mengong",
+        "latitude": "",
+        "longitude": "",
+        "region": "Sud"
+    },
+    {
+        "city" : "Wina",
+        "latitude": "",
+        "longitude": "",
+        "region": "Extrême-Nord"
+    },
+    {
+        "city" : "Biwong-Bane",
+        "latitude": "",
+        "longitude": "",
+        "region": "Sud"
+    },
+    {
+        "city" : "Widikum-Boffe",
+        "latitude": "",
+        "longitude": "",
+        "region": "Nord-Ouest"
+    },
+    {
+        "city" : "Minta",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Mbengwi",
+        "latitude": "",
+        "longitude": "",
+        "region": "Nord-Ouest"
+    },
+    {
+        "city" : "Maga",
+        "latitude": "",
+        "longitude": "",
+        "region": "Extrême-Nord"
+    },
+    {
+        "city" : "Kar-Hay",
+        "latitude": "",
+        "longitude": "",
+        "region": "Extrême-Nord"
+    },
+    {
+        "city" : "Lembe-Yezoum",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Makary",
+        "latitude": "",
+        "longitude": "",
+        "region": "Extrême-Nord"
+    },
+    {
+        "city" : "Matomb",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Makak",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Bot-Makak",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Botiko",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Deuk",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Sangmélima",
+        "latitude": "",
+        "longitude": "",
+        "region": "Sud"
+    },
+    {
+        "city" : "Bassamba",
+        "latitude": "",
+        "longitude": "",
+        "region": "Ouest"
+    },
+    {
+        "city" : "Ngoura",
+        "latitude": "",
+        "longitude": "",
+        "region": "Est"
+    },
+    {
+        "city" : "Zina",
+        "latitude": "",
+        "longitude": "",
+        "region": "Extrême-Nord"
+    },
+    {
+        "city" : "Waza",
+        "latitude": "",
+        "longitude": "",
+        "region": "Extrême-Nord"
+    },
+    {
+        "city" : "Bazou",
+        "latitude": "",
+        "longitude": "",
+        "region": "Ouest"
+    },
+    {
+        "city" : "Njikwa",
+        "latitude": "",
+        "longitude": "",
+        "region": "Nord-Ouest"
+    },
+    {
+        "city" : "Njinikom",
+        "latitude": "",
+        "longitude": "",
+        "region": "Nord-Ouest"
+    },
+    {
+        "city" : "Bangourain",
+        "latitude": "",
+        "longitude": "",
+        "region": "Ouest"
+    },
+    {
+        "city" : "Njimon",
+        "latitude": "",
+        "longitude": "",
+        "region": "Ouest"
+    },
+    {
+        "city" : "Kouoptamo",
+        "latitude": "",
+        "longitude": "",
+        "region": "Ouest"
+    },
+    {
+        "city" : "Tonga",
+        "latitude": "",
+        "longitude": "",
+        "region": "Ouest"
+    },
+    {
+        "city" : "Foumbot",
+        "latitude": "",
+        "longitude": "",
+        "region": "Ouest"
+    },
+    {
+        "city" : "Tinto",
+        "latitude": "",
+        "longitude": "",
+        "region": "Sud-Ouest"
+    },
+    {
+        "city" : "Djohong",
+        "latitude": "",
+        "longitude": "",
+        "region": "Adamaoua"
+    },
+    {
+        "city" : "Meiganga",
+        "latitude": "",
+        "longitude": "",
+        "region": "Adamaoua"
+    },
+    {
+        "city" : "Mamfé",
+        "latitude": "",
+        "longitude": "",
+        "region": "Sud-Ouest"
+    },
+    {
+        "city" : "Mandjou",
+        "latitude": "",
+        "longitude": "",
+        "region": "Est"
+    },
+    {
+        "city" : "Bagangté",
+        "latitude": "",
+        "longitude": "",
+        "region": "Ouest"
+    },
+    {
+        "city" : "Akoeman",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Figuil",
+        "latitude": "",
+        "longitude": "",
+        "region": "Nord"
+    },
+    {
+        "city" : "Poli",
+        "latitude": "",
+        "longitude": "",
+        "region": "Nord"
+    },
+    {
+        "city" : "Ekondo-Titi",
+        "latitude": "",
+        "longitude": "",
+        "region": "Sud-Ouest"
+    },
+    {
+        "city" : "Beka",
+        "latitude": "",
+        "longitude": "",
+        "region": "Nord"
+    },
+    {
+        "city" : "Noni",
+        "latitude": "",
+        "longitude": "",
+        "region": "Nord-Ouest"
+    },
+    {
+        "city" : "Nyambaka",
+        "latitude": "",
+        "longitude": "",
+        "region": "Adamaoua"
+    },
+    {
+        "city" : "Touroua",
+        "latitude": "",
+        "longitude": "",
+        "region": "Nord"
+    },
+    {
+        "city" : "Nyanon",
+        "latitude": "",
+        "longitude": "",
+        "region": "Litoral"
+    },
+    {
+        "city" : "Kombo-Abedimo",
+        "latitude": "",
+        "longitude": "",
+        "region": "Sud-Ouest"
+    },
+    {
+        "city" : "Kombo-Itindi",
+        "latitude": "",
+        "longitude": "",
+        "region": "Sud-Ouest"
+    },
+    {
+        "city" : "Oku",
+        "latitude": "",
+        "longitude": "",
+        "region": "Nord-Ouest"
+    },
+    {
+        "city" : "Batouri",
+        "latitude": "",
+        "longitude": "",
+        "region": "Est"
+    },
+    {
+        "city" : "Nyakokombo",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Nkum",
+        "latitude": "",
+        "longitude": "",
+        "region": "Nord-Ouest"
+    },
+    {
+        "city" : "Banyo",
+        "latitude": "",
+        "longitude": "",
+        "region": "Adamaoua"
+    },
+    {
+        "city" : "Babessi",
+        "latitude": "",
+        "longitude": "",
+        "region": "Nord-Ouest"
+    },
+    {
+        "city" : "Balikumbat",
+        "latitude": "",
+        "longitude": "",
+        "region": "Nord-Ouest"
+    },
+    {
+        "city" : "Ndop",
+        "latitude": "",
+        "longitude": "",
+        "region": "Nord-Ouest"
+    },
+    {
+        "city" : "Nkambé",
+        "latitude": "",
+        "longitude": "",
+        "region": "Sud-Ouest"
+    },
+    {
+        "city" : "Babadjou",
+        "latitude": "",
+        "longitude": "",
+        "region": "Ouest"
+    },
+    {
+        "city" : "Pouma",
+        "latitude": "",
+        "longitude": "",
+        "region": "Litoral"
+    },
+    {
+        "city" : "Jariki",
+        "latitude": "",
+        "longitude": "",
+        "region": "Nord-Ouest"
+    },
+    {
+        "city" : "Petté",
+        "latitude": "",
+        "longitude": "",
+        "region": "Extrême-Nord"
+    },
+    {
+        "city" : "Bali",
+        "latitude": "",
+        "longitude": "",
+        "region": "Nord-Ouest"
+    },
+    {
+        "city" : "Njombe-Penja",
+        "latitude": "",
+        "longitude": "",
+        "region": "Litoral"
+    },
+    {
+        "city" : "konye",
+        "latitude": "",
+        "longitude": "",
+        "region": "Sud-Ouest"
+    },
+    {
+        "city" : "Nwa",
+        "latitude": "",
+        "longitude": "",
+        "region": "Nord-Ouest"
+    },
+    {
+        "city" : "Mombo",
+        "latitude": "",
+        "longitude": "",
+        "region": "Litoral"
+    },
+    {
+        "city" : "Nkondjock",
+        "latitude": "",
+        "longitude": "",
+        "region": "Litoral"
+    },
+    {
+        "city" : "Nord-Makombé",
+        "latitude": "",
+        "longitude": "",
+        "region": "Litoral"
+    },
+    {
+        "city" : "Yingui",
+        "latitude": "",
+        "longitude": "",
+        "region": "Litoral"
+    },
+    {
+        "city" : "Eboné",
+        "latitude": "",
+        "longitude": "",
+        "region": "Litoral"
+    },
+    {
+        "city" : "West-Coast",
+        "latitude": "",
+        "longitude": "",
+        "region": "Sud-Ouest"
+    },
+    {
+        "city" : "Ngwei",
+        "latitude": "",
+        "longitude": "",
+        "region": "Litoral"
+    },
+    {
+        "city" : "Ngambe",
+        "latitude": "",
+        "longitude": "",
+        "region": "Litoral"
+    },
+    {
+        "city" : "Ngambè-Tikar",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Nkongsamba",
+        "latitude": "",
+        "longitude": "",
+        "region": "Litoral"
+    },
+    {
+        "city" : "Bankim",
+        "latitude": "",
+        "longitude": "",
+        "region": "Adamaoua"
+    },
+    {
+        "city" : "Banka",
+        "latitude": "",
+        "longitude": "",
+        "region": "Ouest"
+    },
+    {
+        "city" : "Baham",
+        "latitude": "",
+        "longitude": "",
+        "region": "Ouest"
+    },
+    {
+        "city" : "Bamendjou",
+        "latitude": "",
+        "longitude": "",
+        "region": "Ouest"
+    },
+    {
+        "city" : "Bangem",
+        "latitude": "",
+        "longitude": "",
+        "region": "Sud-Ouest"
+    },
+    {
+        "city" : "Bangou",
+        "latitude": "",
+        "longitude": "",
+        "region": "Ouest"
+    },
+    {
+        "city" : "Bayangam",
+        "latitude": "",
+        "longitude": "",
+        "region": "Ouest"
+    },
+    {
+        "city" : "Demdeng",
+        "latitude": "",
+        "longitude": "",
+        "region": "Ouest"
+    },
+    {
+        "city" : "Péte-Bandjoun",
+        "latitude": "",
+        "longitude": "",
+        "region": "Ouest"
+    },
+    {
+        "city" : "Batié",
+        "latitude": "",
+        "longitude": "",
+        "region": "Ouest"
+    },
+    {
+        "city" : "Banwa",
+        "latitude": "",
+        "longitude": "",
+        "region": "Ouest"
+    },
+    {
+        "city" : "Mbankomo",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Mbangassina",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Assamba",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Mbanga",
+        "latitude": "",
+        "longitude": "",
+        "region": "Litoral"
+    },
+    {
+        "city" : "Fokoué",
+        "latitude": "",
+        "longitude": "",
+        "region": "Ouest"
+    },
+    {
+        "city" : "Monaatélé",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Elig-Mfomo",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Lobo",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Evodoula",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Messok",
+        "latitude": "",
+        "longitude": "",
+        "region": "Est"
+    },
+    {
+        "city" : "Kolofata",
+        "latitude": "",
+        "longitude": "",
+        "region": "Extrême-Nord"
+    },
+    {
+        "city" : "Mokolo",
+        "latitude": "",
+        "longitude": "",
+        "region": "Extrême-Nord"
+    },
+    {
+        "city" : "Messondo",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Melong",
+        "latitude": "",
+        "longitude": "",
+        "region": "Litoral"
+    },
+    {
+        "city" : "Manjo",
+        "latitude": "",
+        "longitude": "",
+        "region": "Litoral"
+    },
+    {
+        "city" : "Ngong",
+        "latitude": "",
+        "longitude": "",
+        "region": "Nord"
+    },
+    {
+        "city" : "Hile-Alifa",
+        "latitude": "",
+        "longitude": "",
+        "region": "Extrême-Nord"
+    },
+    {
+        "city" : "Lagdo",
+        "latitude": "",
+        "longitude": "",
+        "region": "Nord"
+    },
+    {
+        "city" : "Gashiga",
+        "latitude": "",
+        "longitude": "",
+        "region": "Nord"
+    },
+    {
+        "city" : "Garoua",
+        "latitude": "",
+        "longitude": "",
+        "region": "Nord"
+    },
+    {
+        "city" : "Mozogo",
+        "latitude": "",
+        "longitude": "",
+        "region": "Extrême-Nord"
+    },
+    {
+        "city" : "Garoua-Boulai",
+        "latitude": "",
+        "longitude": "",
+        "region": "Litoral"
+    },
+    {
+        "city" : "Mora",
+        "latitude": "",
+        "longitude": "",
+        "region": "Extrême-Nord"
+    },
+    {
+        "city" : "Kaélé",
+        "latitude": "",
+        "longitude": "",
+        "region": "Extrême-Nord"
+    },
+    {
+        "city" : "Tibati",
+        "latitude": "",
+        "longitude": "",
+        "region": "Adamaoua"
+    },
+    {
+        "city" : "Kon-Yambetta",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Akono",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Akonolinga",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Eséka",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Mamfé",
+        "latitude": "",
+        "longitude": "",
+        "region": "Litoral"
+    },
+    {
+        "city" : "Obala",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Mundemba",
+        "latitude": "",
+        "longitude": "",
+        "region": "Sud-Ouest"
+    },
+    {
+        "city" : "Muyuka",
+        "latitude": "",
+        "longitude": "",
+        "region": "Sud-Ouest"
+    },
+    {
+        "city" : "Nanga-Eboko",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Abong-Mbang",
+        "latitude": "",
+        "longitude": "",
+        "region": "Est"
+    },
+    {
+        "city" : "Furu-Awa",
+        "latitude": "",
+        "longitude": "",
+        "region": "Nord-Ouest"
+    },
+    {
+        "city" : "Bondjock",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Fundong",
+        "latitude": "",
+        "longitude": "",
+        "region": "Nord-Ouest"
+    },
+    {
+        "city" : "Nkoteng",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Fongo-Tongo",
+        "latitude": "",
+        "longitude": "",
+        "region": "Ouest"
+    },
+    {
+        "city" : "Nkong-zem",
+        "latitude": "",
+        "longitude": "",
+        "region": "Ouest"
+    },
+    {
+        "city" : "Tubah",
+        "latitude": "",
+        "longitude": "",
+        "region": "Nord-Ouest"
+    },
+    {
+        "city" : "Santa",
+        "latitude": "",
+        "longitude": "",
+        "region": "Nord-Ouest"
+    },
+    {
+        "city" : "Penka-Michel",
+        "latitude": "",
+        "longitude": "",
+        "region": "Ouest"
+    },
+    {
+        "city" : "Santchou",
+        "latitude": "",
+        "longitude": "",
+        "region": "Ouest"
+    },
+    {
+        "city" : "Fontem",
+        "latitude": "",
+        "longitude": "",
+        "region": "Sud-Ouest"
+    },
+    {
+        "city" : "Andek",
+        "latitude": "",
+        "longitude": "",
+        "region": "Nord-Ouest"
+    },
+    {
+        "city" : "Nsem",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Datcheka",
+        "latitude": "",
+        "longitude": "",
+        "region": "Extrême-Nord"
+    },
+    {
+        "city" : "Ngaoui",
+        "latitude": "",
+        "longitude": "",
+        "region": "Adamaoua"
+    },
+    {
+        "city" : "Mbandjock",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Ngaoundal",
+        "latitude": "",
+        "longitude": "",
+        "region": "Adamaoua"
+    },
+    {
+        "city" : "Okala",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Yoko",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Pitoa",
+        "latitude": "",
+        "longitude": "",
+        "region": "Litoral"
+    },
+    {
+        "city" : "Éséka",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Ombéssa",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Ouli",
+        "latitude": "",
+        "longitude": "",
+        "region": "Est"
+    },
+    {
+        "city" : "Nguti",
+        "latitude": "",
+        "longitude": "",
+        "region": "Sud-Ouest"
+    },
+    {
+        "city" : "Nguelebok",
+        "latitude": "",
+        "longitude": "",
+        "region": "Est"
+    },
+    {
+        "city" : "Ndelele",
+        "latitude": "",
+        "longitude": "",
+        "region": "Est"
+    },
+    {
+        "city" : "Mbang",
+        "latitude": "",
+        "longitude": "",
+        "region": "Est"
+    },
+    {
+        "city" : "Kentzou",
+        "latitude": "",
+        "longitude": "",
+        "region": "Est"
+    },
+    {
+        "city" : "Bélado",
+        "latitude": "",
+        "longitude": "",
+        "region": "Est"
+    },
+    {
+        "city" : "Belel",
+        "latitude": "",
+        "longitude": "",
+        "region": "Adamaoua"
+    },
+    {
+        "city" : "Fonfuka",
+        "latitude": "",
+        "longitude": "",
+        "region": "Nord-Ouest"
+    },
+    {
+        "city" : "Belo",
+        "latitude": "",
+        "longitude": "",
+        "region": "Nord-Ouest"
+    },
+    {
+        "city" : "Mbé",
+        "latitude": "",
+        "longitude": "",
+        "region": "Adamaoua"
+    },
+    {
+        "city" : "Kette",
+        "latitude": "",
+        "longitude": "",
+        "region": "Est"
+    },
+    {
+        "city" : "Tombel",
+        "latitude": "",
+        "longitude": "",
+        "region": "Sud-Ouest"
+    },
+    {
+        "city" : "Kékem",
+        "latitude": "",
+        "longitude": "",
+        "region": "Litoral"
+    },
+    {
+        "city" : "Touboro",
+        "latitude": "",
+        "longitude": "",
+        "region": "Nord"
+    },
+    {
+        "city" : "Tcholliré",
+        "latitude": "",
+        "longitude": "",
+        "region": "Nord"
+    },
+    {
+        "city" : "Rey-Bouba",
+        "latitude": "",
+        "longitude": "",
+        "region": "Nord"
+    },
+    {
+        "city" : "Madingring",
+        "latitude": "",
+        "longitude": "",
+        "region": "Nord"
+    },
+    {
+        "city" : "Magba",
+        "latitude": "",
+        "longitude": "",
+        "region": "Litoral"
+    },
+    {
+        "city" : "Bélabo",
+        "latitude": "",
+        "longitude": "",
+        "region": "Litoral"
+    },
+    {
+        "city" : "Tonga",
+        "latitude": "",
+        "longitude": "",
+        "region": "Litoral"
+    },
+    {
+        "city" : "Lomié",
+        "latitude": "",
+        "longitude": "",
+        "region": "Est"
+    },
+    {
+        "city" : "Maga",
+        "latitude": "",
+        "longitude": "",
+        "region": "Litoral"
+    },
+    {
+        "city" : "Doumé",
+        "latitude": "",
+        "longitude": "",
+        "region": "Est"
+    },
+    {
+        "city" : "Mboma",
+        "latitude": "",
+        "longitude": "",
+        "region": "Est"
+    },
+    {
+        "city" : "Yokadouma",
+        "latitude": "",
+        "longitude": "",
+        "region": "Est"
+    },
+    {
+        "city" : "Salapoumbé",
+        "latitude": "",
+        "longitude": "",
+        "region": "Est"
+    },
+    {
+        "city" : "Kai-Kai",
+        "latitude": "",
+        "longitude": "",
+        "region": "Extrême-Nord"
+    },
+    {
+        "city" : "Kalfou",
+        "latitude": "",
+        "longitude": "",
+        "region": "Extrême-Nord"
+    },
+    {
+        "city" : "Guéré",
+        "latitude": "",
+        "longitude": "",
+        "region": "Extrême-Nord"
+    },
+    {
+        "city" : "Guémé",
+        "latitude": "",
+        "longitude": "",
+        "region": "Extrême-Nord"
+    },
+    {
+        "city" : "Gobo",
+        "latitude": "",
+        "longitude": "",
+        "region": "Extrême-Nord"
+    },
+    {
+        "city" : "Moloundou",
+        "latitude": "",
+        "longitude": "",
+        "region": "Est"
+    },
+    {
+        "city" : "Gari-Gombo",
+        "latitude": "",
+        "longitude": "",
+        "region": "Est"
+    },
+    {
+        "city" : "Koutaba",
+        "latitude": "",
+        "longitude": "",
+        "region": "Ouest"
+    },
+    {
+        "city" : "Magba",
+        "latitude": "",
+        "longitude": "",
+        "region": "Ouest"
+    },
+    {
+        "city" : "Malentouen",
+        "latitude": "",
+        "longitude": "",
+        "region": "Ouest"
+    },
+    {
+        "city" : "Massangam",
+        "latitude": "",
+        "longitude": "",
+        "region": "Ouest"
+    },
+    {
+        "city" : "Dziguilao",
+        "latitude": "",
+        "longitude": "",
+        "region": "Extrême-Nord"
+    },
+    {
+        "city" : "Nguibassal",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Ngomedzap",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Ngog-Mapubi",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Doumaintang",
+        "latitude": "",
+        "longitude": "",
+        "region": "Est"
+    },
+    {
+        "city" : "Tokombéré",
+        "latitude": "",
+        "longitude": "",
+        "region": "Extrême-Nord"
+    },
+    {
+        "city" : "Ako",
+        "latitude": "",
+        "longitude": "",
+        "region": "Nord-Ouest"
+    },
+    {
+        "city" : "Toko",
+        "latitude": "",
+        "longitude": "",
+        "region": "Sud-Ouest"
+    },
+    {
+        "city" : "Dimako",
+        "latitude": "",
+        "longitude": "",
+        "region": "Est"
+    },
+    {
+        "city" : "Atok",
+        "latitude": "",
+        "longitude": "",
+        "region": "Est"
+    },
+    {
+        "city" : "Angossas",
+        "latitude": "",
+        "longitude": "",
+        "region": "Est"
+    },
+    {
+        "city" : "Ngoro",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Blangoua",
+        "latitude": "",
+        "longitude": "",
+        "region": "Extrême-Nord"
+    },
+    {
+        "city" : "Dibamba",
+        "latitude": "",
+        "longitude": "",
+        "region": "Litoral"
+    },
+    {
+        "city" : "Moutourwa",
+        "latitude": "",
+        "longitude": "",
+        "region": "Extrême-Nord"
+    },
+    {
+        "city" : "Moulvoudaye",
+        "latitude": "",
+        "longitude": "",
+        "region": "Extrême-Nord"
+    },
+    {
+        "city" : "Dizangué",
+        "latitude": "",
+        "longitude": "",
+        "region": "Litoral"
+    },
+    {
+        "city" : "Ngoumou",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Isanguele",
+        "latitude": "",
+        "longitude": "",
+        "region": "Sud-Ouest"
+    },
+    {
+        "city" : "Dibang",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Idabato",
+        "latitude": "",
+        "longitude": "",
+        "region": "Sud-Ouest"
+    },
+    {
+        "city" : "Guidiguis",
+        "latitude": "",
+        "longitude": "",
+        "region": "Extrême-Nord"
+    },
+    {
+        "city" : "Tignère",
+        "latitude": "",
+        "longitude": "",
+        "region": "Adamaoua"
+    },
+    {
+        "city" : "Galim-Tignère",
+        "latitude": "",
+        "longitude": "",
+        "region": "Adamaoua"
+    },
+    {
+        "city" : "Tchati-Bali",
+        "latitude": "",
+        "longitude": "",
+        "region": "Extrême-Nord"
+    },
+    {
+        "city" : "Bogo",
+        "latitude": "",
+        "longitude": "",
+        "region": "Extrême-Nord"
+    },
+    {
+        "city" : "Batcham",
+        "latitude": "",
+        "longitude": "",
+        "region": "Ouest"
+    },
+    {
+        "city" : "Batchenga",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Batibo",
+        "latitude": "",
+        "longitude": "",
+        "region": "Nord-Ouest"
+    },
+    {
+        "city" : "Yabassi",
+        "latitude": "",
+        "longitude": "",
+        "region": "Litoral"
+    },
+    {
+        "city" : "Endom",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Benakuma",
+        "latitude": "",
+        "longitude": "",
+        "region": "Nord-Ouest"
+    },
+    {
+        "city" : "Ndom",
+        "latitude": "",
+        "longitude": "",
+        "region": "Litoral"
+    },
+    {
+        "city" : "Wabane",
+        "latitude": "",
+        "longitude": "",
+        "region": "Sud-Ouest"
+    },
+    {
+        "city" : "Awaé",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Dzeng",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Edzendouan",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Soulédé-Roua",
+        "latitude": "",
+        "longitude": "",
+        "region": "Extrême-Nord"
+    },
+    {
+        "city" : "Mouanko",
+        "latitude": "",
+        "longitude": "",
+        "region": "Litoral"
+    },
+    {
+        "city" : "Massock-Songloulou",
+        "latitude": "",
+        "longitude": "",
+        "region": "Litoral"
+    },
+    {
+        "city" : "Akwaya",
+        "latitude": "",
+        "longitude": "",
+        "region": "Sud-Ouest"
+    },
+    {
+        "city" : "Makénéné",
+        "latitude": "",
+        "longitude": "",
+        "region": "Centre"
+    },
+    {
+        "city" : "Gazawa",
+        "latitude": "",
+        "longitude": "",
+        "region": "Extrême-Nord"
+    }
+]

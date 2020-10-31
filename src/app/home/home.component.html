@@ -45,7 +45,7 @@
                     </div>
                     <input (keypress) = "locationKeypress()" value="{{locatiovalue}}" autocomplete="off" type="text" [(ngModel)] = "searchLocation" name = "searchLocation" placeholder="Indiquer la Region" translate><i class="fas fa-map-marker-alt"></i>
                     <div class="locationblock" (mouseleave) = "hideLocationBlock()" *ngIf="isLocation" >
-                        <div (click)="locationItem(l)" class="locationItem" *ngFor="let l of location | searchFilter: searchLocation">{{l}}</div>
+                        <div (click)="locationItem(l.city)" class="locationItem" *ngFor="let l of locat | locationFilter: searchLocation">{{l.city}}</div>
                     </div>
                     <div class="go"><p translate>GO <i class="fas fa-chevron-right"></i></p></div>
                 </form>

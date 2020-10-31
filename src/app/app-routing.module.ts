@@ -13,11 +13,16 @@ import { IndividualComponent } from './authentification/individual/individual.co
 import { PageNotFoundComponent } from './authentification/page-not-found/page-not-found.component';
 import { BidComponent } from './bid/bid.component';
 import { ContactComponent } from './contact/contact.component';
+import { DashbordComponent } from './dashbord/dashbord.component';
+import { MescontactsComponent } from './dashbord/mescontacts/mescontacts.component';
+import { MesechangesComponent } from './dashbord/mesechanges/mesechanges.component';
+import { PesonnaliseComponent } from './dashbord/pesonnalise/pesonnalise.component';
 import { HomeComponent } from './home/home.component';
+import { LoginGuardService } from "../app/services/login-guard.service";
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
-    {path: 'action', component: ActionComponent,
+  {path: 'action', component: ActionComponent,
       children:[
       {path: 'insert-ad',component: InsertAdComponent},
       {path:'insert-service',component:InsertServiceComponent},
@@ -25,17 +30,23 @@ const routes: Routes = [
       {path:'insert-research-service', component:InsertResearchServiceOrAdComponent},
       {path:'insert-product', component:InsertProductComponent},
       { path: '',   redirectTo: 'insert-service', pathMatch: 'full' }]}, //{ path: '',   redirectTo: '/insert-service', pathMatch: 'full' }
-    {path: 'bid', component: BidComponent},
-    {path: 'contact', component: ContactComponent},
-    {path: 'authentification', component: AuthentificationComponent,
+  {path: 'depot', component: BidComponent},
+  {path: 'dashboard', component: DashbordComponent,
+    canActivate:[LoginGuardService],
+    children:[
+      {path: 'mycontacts',component:MescontactsComponent},
+      {path: 'myexchanges',component:MesechangesComponent},
+      {path:'personalized',component:PesonnaliseComponent}
+  ]},
+  {path: 'contact', component: ContactComponent},
+  {path: 'authentification', component: AuthentificationComponent,
     children: [
-      {path: 'customer',component: CustomerComponent},
       {path: 'company',component: CompanyComponent},
       {path: 'individual',component: IndividualComponent},
-      { path: '',   redirectTo: 'customer', pathMatch: 'full' }
-    ]},
-    { path: '',   redirectTo: 'home', pathMatch: 'full' },
-    { path: '**', component: PageNotFoundComponent}
+      { path: '',   redirectTo: 'individual', pathMatch: 'full' }
+  ]},
+  { path: '',   redirectTo: 'home', pathMatch: 'full' },
+  { path: '**', component: PageNotFoundComponent}
 ];
 
 @NgModule({

@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms'; 
 import { ReactiveFormsModule } from '@angular/forms';
+import { HandlingDataService } from './services/handling-data.service';
 
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClientModule, HttpClient} from '@angular/common/http';
+import { LoginGuardService } from "../app/services/login-guard.service";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,7 +27,12 @@ import { CompanyComponent } from './authentification/company/company.component';
 import { IndividualComponent } from './authentification/individual/individual.component';
 import { PageNotFoundComponent } from './authentification/page-not-found/page-not-found.component';
 import { SearchFilterPipe } from "./pipe/searchFilter";
+import { LocationFilterPipe } from "../app/pipe/location.filter";
 import { DragDropDirective } from "./directive/drapdrop.directive";
+import { DashbordComponent } from './dashbord/dashbord.component';
+import { MescontactsComponent } from './dashbord/mescontacts/mescontacts.component';
+import { MesechangesComponent } from './dashbord/mesechanges/mesechanges.component';
+import { PesonnaliseComponent } from './dashbord/pesonnalise/pesonnalise.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +52,12 @@ import { DragDropDirective } from "./directive/drapdrop.directive";
     IndividualComponent,
     PageNotFoundComponent,
     SearchFilterPipe,
-    DragDropDirective
+    LocationFilterPipe,
+    DragDropDirective,
+    DashbordComponent,
+    MescontactsComponent,
+    MesechangesComponent,
+    PesonnaliseComponent
   ],
   imports: [
     BrowserModule,
@@ -53,6 +65,7 @@ import { DragDropDirective } from "./directive/drapdrop.directive";
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     TranslateModule.forRoot({
       loader: {
           provide: TranslateLoader,
@@ -61,7 +74,7 @@ import { DragDropDirective } from "./directive/drapdrop.directive";
       }
   })
   ],
-  providers: [],
+  providers: [HandlingDataService,LoginGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -6,6 +6,8 @@ import {
   animate,
   transition
 } from '@angular/animations';
+import { FormGroup,FormBuilder,FormControl,Validators } from "@angular/forms";
+import { HandlingDataService } from "../../services/handling-data.service";
 
 @Component({
   selector: 'app-insert-service',
@@ -61,7 +63,20 @@ export class InsertServiceComponent implements OnInit {
   public isServiceData : boolean;
   public isAddressData : boolean;
   public isImageData : boolean;
-  constructor() { }
+  public url = 'http://localhost:3535';
+  constructor(private fb : FormBuilder,private handlingservice : HandlingDataService) { }
+
+  public serviceForm = this.fb.group({
+    servicename: new FormControl('', [Validators.required]),
+    servicedescription: new FormControl('', [Validators.required]),
+    aservicedescription: new FormControl(''),
+    
+    distric : new FormControl('',[Validators.required]),
+    city : new FormControl('',[Validators.required]),
+    bpostal: new FormControl(''),
+    region : new FormControl('',[Validators.required]),
+    images : new FormControl('')
+  })
 
   get stateName() {
     return this.left ? 'right' : 'left';
@@ -104,15 +119,39 @@ export class InsertServiceComponent implements OnInit {
   }
 
   uploadFile(event){
-    console.log(event[0]);
+    //console.log(event[0]);
     for (let index = 0; index < event.length; index++) {
-      const element = event[index].name;
-      console.log(element);
+      const element = event[index];
+      //console.log(element);
       this.files.push(element);
     }
   }
+    
   deleteAttachement(index){
     this.files.splice(index,1);
+  }
+  submitInsertService(){
+    const formData: any = new FormData();
+    //const files: Array<File> = this.filesToUpload;
+    console.log(this.files);
+    if(this.files.length > 0){
+      for(let i =0; i < this.files.length; i++){
+        formData.append("uploads[]", this.files[i], this.files[i]['name']);
+      }
+    }
+    
+    formData.append("data",JSON.stringify(this.serviceForm.value));
+    this.handlingservice.handlingInsertService(this.url,formData).subscribe(
+      res => {
+        console.log(res);
+      },
+      err => {
+        console.log(err);
+      }
+    )
+    console.log('form data variable :   ', formData);
+    
+    //console.log(this.serviceForm.value);
   }
 
 }

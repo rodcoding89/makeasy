@@ -1,0 +1,100 @@
+<div class="content">
+    <div class="innercontent">
+        <div class="firstblock">
+            <div class="subhead">
+                <div class="userauth"></div>
+                <div class="name">{{username}}</div>
+            </div>
+        </div>
+        <div class="otherblock" *ngIf="myNavi">
+            <div class="item" (click)= "showBlock('profil')">
+                <div class="icon"><i class="fas fa-id-badge fa-2x"></i></div>
+                <h3 translate>Votre Profil</h3>
+                <p translate>Modifier votre profil,ajouté ou inséré de nouvelle donnée comme votre image de profil</p>
+                <span translate>Plus de Details</span>
+            </div>
+            <div class="item" (click)= "showBlock('service')">
+                <div class="icon"><i class="fas fa-database fa-2x"></i></div>
+                <h3 translate>Vos Services Insérés</h3>
+                <p translate>Recapitulatif de vos services insérés dans notre base de donnéé</p>
+                <span translate>Plus de Details</span>
+            </div>
+            <div class="item" (click)= "showBlock('rservice')">
+                <div class="icon"><i class="fas fa-server fa-2x"></i></div>
+                <h3 translate>Vos recherches de Service postés</h3>
+                <p translate>Récapitulatif sur vos dépôts de Recherche de service dans notre base de donnée</p>
+                <span translate>Plus de Details</span>
+            </div>
+            <div class="item" (click)= "showBlock('product')">
+                <div class="icon"><i class="fas fa-database fa-2x"></i></div>
+                <h3 translate>Mes Produits insérés</h3>
+                <p translate>Recapitulatif sur vos dépôts de Produit dans notre base de donnée</p>
+                <span translate>Plus de Details</span>
+            </div>
+            <div class="item" (click)= "showBlock('ad')">
+                <div class="icon"><i class="fas fa-server fa-2x"></i></div>
+                <h3 translate>Mes annonce faites</h3>
+                <p translate>Recapitulatif sur mes annonces postés dans notre base de donnée</p>
+                <span translate>Plus de Details</span>
+            </div>
+            <div class="item" (click)= "showBlock('need')">
+                <div class="icon"><i class="fas fa-database fa-2x"></i></div>
+                <h3 translate>Mes Besoins postés</h3>
+                <p translate>Recapitulatif sur vos besoins postés dans notre base de donnée</p>
+                <span translate>Plus de Details</span>
+            </div>
+            <div class="item" (click)= "showBlock('personalized')">
+                <div class="icon"><i class="fas fa-pager fa-2x"></i></div>
+                <h3 translate>Avoir ma Page personelle</h3>
+                <p translate>Souhaitez vous avoir une page a vous toute seule, ou vos données seront reguliérement recapitulées et vos service mit en prémiere ligne?</p>
+                <span translate>Plus de Details</span>
+            </div>
+            <div class="item" (click)= "showBlock('myexchange')">
+                <div class="icon"><i class="fas fa-comments fa-2x"></i></div>
+                <h3>Mes Feedback</h3>
+                <p>Represente toute vos echanges faite avec d'autre utilisateur dans le cadre d'une vente, d'achat ou d'un reiseignement.</p>
+                <span>Plus de Details</span>
+            </div>
+        </div>
+        <div class="deconn">DECONNEXION</div>
+    </div>
+    <div class="contentblock">
+        <div class="innercontentblock">
+            <div *ngIf="isContentP"></div>
+            <div *ngIf="isContentS"></div>
+            <div *ngIf="isContentR"></div>
+            <div *ngIf="isContentA"></div>
+            <div *ngIf="isContentB"></div>
+            <div *ngIf="isContentPP"></div>
+            <div *ngIf="isPersonalized" class="personalized">
+                <div class="personalizedcontent">
+                    <div class="back" translate>RETOUR A LA PAGE PRÉCÉDENTE</div>
+                    <div class="textcontact">
+                        <h2 translate>Mes contacts</h2>
+                        <p translate>La Page personnalisé vous donne la possibilité d'avoir vos contacts. ces contacts sont le fruit des echanges que vous avez realisé avec d'autre personne, dans le cadre commercial ou d'un echange simple.</p>
+                        <p translate>Avec cela vous pouvez donc avoir votre liste a porté de main et realiser facilement vos affaires</p>
+                        <p translate>Dans quel mesure cela peut m'être utile ? vous n'avez pas toujours le temps de rechercher avec qui vous avez realisé une affaire derniérement,cette liste vous donne une liste des personnes avec qui vous avez étè en contact recement.</p>
+                    </div>
+                    <div class="myexchange">
+                        <h2 translate>Mes Échanges faites avec les autres</h2>
+                        <p translate>ce ci correspond aux echanges faites avec les autres, dans le cadre d'un simple echange ou commercial.</p>
+                        <p translate>cela vous donnes des Informations sur celui avec qui vous avez deja echangé et deqoui s'agissait t'il lors de vos echanges</p>
+                    </div>
+                    <div class="doingservice">
+                        <h2 translate>Mes Services Déja rendus</h2>
+                        <p translate>Ici vos services rendus sont reccapitulés et présentés, afin d'attirer l'attention sur vous et faire grandir vos contacts</p>
+                    </div>
+                    <div class="">
+                        <h2 translate>Les services que je propose</h2>
+                        <p translate>Ici est présenté le ou les Service que vous proposez, afin de permettre a ceux qui regarde votre page d'avoir une idée direct de quoi ou dans quoi es ce que vous faite</p>
+                    </div>
+                    <p translate>Activé votre page personnel revient a pays 5 euro le moi. Ideal pour ceux qui non pas les moyen de ce payer un site internet.</p>       
+                </div>
+                <div class="activepage" translate>ACTIVER MA PAGE PERSONELLE</div>
+            </div>
+            <div *ngIf="isFeedback"></div>
+        </div>
+        
+    </div>
+</div>
+<router-outlet></router-outlet>

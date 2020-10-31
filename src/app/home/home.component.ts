@@ -9,6 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HomeComponent implements OnInit {
   private url = "../assets/files/category.json";
+  private url1 = "../assets/files/citylist.json";
   public searchLocation = '';
   public categorys : any[];
   public optionValue : any;
@@ -17,13 +18,18 @@ export class HomeComponent implements OnInit {
   public categvalue : string;
   public searchText = '';
   public isFilter : boolean;
-  public location = ["Centre",'Sud','Est','Ouest','Nord','Nord Ouest','Sud Ouest','Adamaoua','Extrem Nord','Littoral','Diaspora'];
+  //public location = ["Centre",'Sud','Est','Ouest','Nord','Nord Ouest','Sud Ouest','Adamaoua','Extrem Nord','Littoral','Diaspora'];
+  public locat : any[];
   public categoryItem : any[];
   public locatiovalue : string;
   public isLocation : boolean;
   constructor(private http: HttpClient) { 
     this.getJSON(this.url).subscribe(data => {
       this.categorys = data;
+     });
+     this.getJSON(this.url1).subscribe(data => {
+      console.log(data);
+      this.locat = data;
      });
   }
 

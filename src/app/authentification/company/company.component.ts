@@ -6,6 +6,7 @@ import {
   animate,
   transition
 } from '@angular/animations';
+import { FormControl, FormGroup, FormBuilder,Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-company',
@@ -44,8 +45,26 @@ export class CompanyComponent implements OnInit {
   public left1: boolean;
   public right1 : boolean;
   public test : boolean;
-  constructor() { }
+  public isError: boolean;
+  public isConfirmError : boolean;
+  public isSignError : boolean;
+  public cpass : any;
+  
+  constructor(private fb: FormBuilder) { }
 
+  public loginForm = this.fb.group({
+    lemail: new FormControl('', [Validators.required, Validators.email]),
+    lpass: new FormControl('', [Validators.required, Validators.minLength(6)]),
+  })
+
+  public signForm = this.fb.group({
+    fname: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    lname: new FormControl('', [Validators.required,Validators.minLength(3)]),
+    email: new FormControl('', [Validators.required,Validators.email]),
+    tel: new FormControl('', [Validators.required,Validators.minLength(8)]),
+    spass: new FormControl('', [Validators.required,Validators.minLength(6)]),
+    //cpass: new FormControl('', [Validators.required]),
+  });
   ngOnInit(): void {
     this.isLogin = true;
     this.isSignText = true;
@@ -55,6 +74,9 @@ export class CompanyComponent implements OnInit {
     this.right = false;
     this.left1 = false;
     this.right1 = false;
+    this.isError = true;
+    this.isConfirmError = false;
+    this.isSignError = true;
   }
 
   get stateName() {
@@ -79,5 +101,25 @@ export class CompanyComponent implements OnInit {
     this.isLogin = true;
     this.isSign = false;
     this.isSignText = true;
+  }
+  onSubmit(){
+    this.isError = false;
+    console.log(this.loginForm);
+    console.log(this.loginForm.controls['lemail'].value);
+    this.loginForm.reset();
+  }
+  change($event){
+    this.cpass = $event.target.value;
+    console.log(this.cpass);
+  }
+  onSignSubmit(){
+    //var cpass = this.signForm.controls['cpass'].value;
+    var spass = this.signForm.controls['spass'].value;
+    if(this.cpass ==! spass){
+      this.isConfirmError = true;
+      this.isSignError = true;
+      this.signForm.reset();
+    }
+    console.log(this.signForm);
   }
 }
