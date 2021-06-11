@@ -1,3 +1,4 @@
+<div class="loader" *ngIf = "isLoader"><div class="lds-ripple"><div></div><div></div></div></div>
 <div class="insertService">
     <div class="formcontent">
         <div class="followForm">
@@ -22,53 +23,118 @@
            </div>
         </div>
         <div class="formblock">
-            <form action="" method="post">
+            <form [formGroup] = "productForm" action="" method="post" (ngSubmit) = "submitInsertService($event)">
                 <div class="block1" [@leftright1]="stateName">
-                    <h3>Remplissez les données nécessaire pour l'ajouts du Produit</h3>
-                    <div class="produitName">
-                        <p translate>Nom du Produit</p>
-                        <input type="text" name="" id="" placeholder="Offre des cours du soir">
+                    <h3 translate>Remplissez les données nécessaire pour l'ajouts du Produit</h3>
+                    <div class="serviceName">
+                        <p translate>Nom du produit*</p>
+                        <input type="text" name="" id="" placeholder="Laptop HP a vendre" formControlName = "productname">
+                        <div *ngIf="productForm.get('productname').errors && (productForm.get('productname').dirty || productForm.get('productname').touched)" class="error">
+                            <div class="error" *ngIf="productForm.get('productname').errors.required" translate>Le Nom du Produit est reccommandé</div>
+                        </div>
                     </div>
-                    <div class="produitPrice">
-                        <p translate>prix du Produit</p>
-                        <input type="text" name="" id="" placeholder="Offre des cours du soir">
+                    <div class="serviceName">
+                        <p translate>Estimé un prix et indiquer la Monnaie*</p>
+                        <input type="text" name="" id="" placeholder="222500 fcfa" formControlName = "prix">
+                        <div *ngIf="productForm.get('prix').errors && (productForm.get('prix').dirty || productForm.get('prix').touched)" class="error">
+                            <div class="error" *ngIf="productForm.get('prix').errors.required" translate>Le Prix du produit est reccommandé</div>
+                        </div>
                     </div>
                     <div class="etatProduit">
                         <p translate>Préciser l'état du Produit</p>
                         <div class="check">
-                            <div translate>Neouf </div>
-                            <input type="checkbox" name="" id="" class="cbox1">
+                            <div translate>Neouf 
+                                <input value="new" type="checkbox" name="" id="" class="cbox1" formControlName = "new">
+                            </div>
+                            
                            
-                            <div translate>Déja utilisé </div>
-                            <input type="checkbox" name="" id="" class="cbox2">
+                            <div translate>Déja utilisé 
+                                <input value="old" type="checkbox" name="" id="" class="cbox2" formControlName = "old">
+                            </div>
+                            
                             
                         </div>
                     </div>
-                    <div class="produitDescription">
-                        <p translate>Description du Produit</p>
-                        <textarea name="" placeholder="Entrer la Description du Service" id="" cols="30" rows="10"></textarea>
+                    <div class="serviceDescription">
+                        <p translate>Description du Produit*</p>
+                        <textarea name="" placeholder="Je vends mon ordinateur portable" id="" cols="30" rows="10" formControlName = "productdescription"></textarea>
+                        <div *ngIf="productForm.get('productdescription').errors && (productForm.get('productdescription').dirty || productForm.get('productdescription').touched)" class="error">
+                            <div class="error" *ngIf="productForm.get('productdescription').errors.required" translate>La Description du Produit est reccommandé</div>
+                        </div>
                     </div>
-                    
                     <div class="next" (click)="moveRight()"><p translate>SUIVANT</p></div>
                 </div>
                 <div class="block2" [@leftright2]="stateName1">
-                    <h3>Remplissez l'address de localisation</h3>
-                    <div class="distric">
-                        <p translate>Le Quartier *</p>
-                        <input type="text" name="" id="" placeholder="Indiquer le Quartier">
+                    <h3 translate>Remplissez l'address de localisation</h3>
+                    <div class="localisationblock">
+                        <div class="localblock" [ngClass] = "{'localactive':isLocal}" translate (click) = "localLeftRight()">Local</div>
+                        <div class="diasporablock" [ngClass] = "{'diaspoactive':isDiaspo}" translate (click) = "diaspoLeftRight()">Diaspora</div>
                     </div>
-                    <div class="city">
-                        <p translate>La Ville *</p>
-                        <input type="text" name="" id="" placeholder="Indiquer la Ville">
+                    <div class="contentdiaspora" [@leftright4]="stateName3">
+                        <h3 translate>Vous residez a l'etrangé</h3>
+                        <div class="diaspora">
+                            <div class="distric">
+                                <p translate>La Rue *</p>
+                                <input type="text" name="" id="" placeholder="Indiquer la Rue" formControlName = "distric">
+                                <div *ngIf="productForm.get('distric').errors && (productForm.get('distric').dirty || productForm.get('distric').touched)" class="error">
+                                    <div class="error" *ngIf="productForm.get('distric').errors.required" translate>Le Nom de la Rue est reccommandé</div>
+                                </div>
+                            </div>
+                            <div class="city">
+                                <p translate>La Ville *</p>
+                                <input type="text" name="" id="" placeholder="Indiquer la Ville" formControlName = "city">
+                                <div *ngIf="productForm.get('city').errors && (productForm.get('city').dirty || productForm.get('city').touched)" class="error">
+                                    <div class="error" *ngIf="productForm.get('city').errors.required" translate>Le Nom de la Ville est reccommandé</div>
+                                </div>
+                            </div>
+                            <div class="region">
+                                <p translate>La Region *</p>
+                                <input type="text" name="" id="" placeholder="Indiquer la Region" formControlName = "region">
+                                <div *ngIf="productForm.get('region').errors && (productForm.get('region').dirty || productForm.get('region').touched)" class="error">
+                                    <div class="error" *ngIf="productForm.get('region').errors.required" translate>Le Nom de la Region est reccommandé</div>
+                                </div>
+                            </div>
+                            <div class="bpostal">
+                                <p translate>Le Pays*</p>
+                                <input type="text" name="" id="" placeholder="Indiquer le pays" formControlName = "pays">
+                            </div>
+                        </div>
                     </div>
-                    <div class="bpostal">
-                        <p translate>La Boite Postal</p>
-                        <input type="text" name="" id="" placeholder="Indiquer la Boite postale">
+                    
+                    <div class="contentlocal" [@leftright4]="stateName4">
+                        <h3 translate>Vous Residez au cameroun</h3>
+                        <div class="local">
+                        
+                            <div class="distric">
+                                <p translate>Le Quartier *</p>
+                                <input type="text" name="" id="" placeholder="Indiquer le Quartier" formControlName = "distric">
+                                <div *ngIf="productForm.get('distric').errors && (productForm.get('distric').dirty || productForm.get('distric').touched)" class="error">
+                                    <div class="error" *ngIf="productForm.get('distric').errors.required" translate>Le Nom du Quartier est reccommandé</div>
+                                </div>
+                            </div>
+                            <div class="city">
+                                <p translate>La Ville *</p>
+                                <input type="text" name="" id="" placeholder="Indiquer la Ville" formControlName = "city">
+                                <div *ngIf="productForm.get('city').errors && (productForm.get('city').dirty || productForm.get('city').touched)" class="error">
+                                    <div class="error" *ngIf="productForm.get('city').errors.required" translate>Le Nom de la Ville est reccommandé</div>
+                                </div>
+                            </div>
+                            <div class="bpostal">
+                                <p translate>La Boite Postal</p>
+                                <input type="text" name="" id="" placeholder="Indiquer la Boite postale" formControlName = "bpostal">
+                            </div>
+                            <div class="region">
+                                <p translate>La Region *</p>
+                                <input type="text" name="" id="" placeholder="Indiquer la Region" formControlName = "region">
+                                <div *ngIf="productForm.get('region').errors && (productForm.get('region').dirty || productForm.get('region').touched)" class="error">
+                                    <div class="error" *ngIf="productForm.get('region').errors.required" translate>Le Nom de la Region est reccommandé</div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        
                     </div>
-                    <div class="region">
-                        <p translate>La Region *</p>
-                        <input type="text" name="" id="" placeholder="Indiquer la Region">
-                    </div>
+                    
                     <div class="navibt">
                         <div class="preview" (click)="preview()"><p translate>PRÉCÉDENT</p></div>
                         <div class="next" (click)="otherNext()"><p translate>SUIVANT</p></div>
@@ -80,26 +146,22 @@
                     <div class="uploadimage">
                         <div class="imgcontent" (click)="fileInput.click()" drapDropFile (onFileDropped) ="uploadFile($event)">
                             <span translate>Chargé des Images</span>
-                            <input hidden type="file" #fileInput (change)="uploadFile($event.target.files)">
+                            <input hidden accept="image/*" type="file" multiple #fileInput (change)="uploadFile($event.target.files)" formControlName = "images">
                             <i class="fas fa-cloud-upload-alt"></i>
                         </div>
-                        <div class="imagelist">
-                            <div class="item clearfix" *ngFor ="let file of files; let i = index">
-                                <ul>
-                                    <li>{{file}}
-                                        <span class="delete-file" (click)="deleteAttachement(i)">
-                                            <i class="fas fa-trash"></i>
-                                        </span>
-                                    </li>
-                                </ul>
-                                
-                            </div>
-                        </div>
+                    </div>
+                    <div class="imagelist">
+                        <span class="clearfix" *ngFor ="let file of files; let i = index">
+                            <b>{{file.name}}</b>
+                            <b class="delete-file" (click)="deleteAttachement(i)">
+                                <i class="fas fa-trash"></i>
+                            </b>
+                        </span>
                     </div>
                     <p translate>Si vous ne disposez pas d'image, vous pouvez sauter cette étape et valider l'insertion de vos données</p>
                     <div class="navibt">
                         <div class="preview" (click)="otherPreview()"><p translate>PRÉCÉDENT</p></div>
-                        <div class="saveData"><p translate>ENREGISTRER LES DONNÉES SAISIS</p></div>
+                        <div class="saveData"><button type="submit" [disabled] = "!productForm.valid" translate>ENREGISTRER LES DONNÉES SAISIS</button></div>
                     </div>
                 </div>
                   

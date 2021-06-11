@@ -3,8 +3,6 @@
 @mixin pagehome() {
     .home{
         width: 100%;
-        height: 500px;
-        background-color: $content-color;
     }
     .innerpage{
         @include centerEl();
@@ -18,55 +16,67 @@
             justify-content: space-between;
         }
         .myform{
-            width: 72%;
+            width: 100%;
             display: flex;
             justify-content: space-between;
         }
         .categoriContent{
             position: absolute;
-            width: 98%;
+            width: 22%;
+            right: 128px;
             top: 110px;
             margin-top: 20px;
-            display: flex;
             box-shadow: 0px 0px 4px 2px $header-color;
             border-radius: 5px;
             padding: 20px;
             background-color: $content-color;
-            justify-content: space-between;
-            .element{
+            .item{
                 cursor: pointer;
                 color: $white-color;
+                padding: 10px;
+                &:hover{
+                    background-color: brown;
+                }
             }
         }
         .category{
-            @include pDecor(22%);
+            @include pDecor(35%);
+            background-color: $content-color;
             .fa-caret-down{
                 position: absolute;
                 right: 10px;
+                color: $white-color;
+                top: 15px;
             }
         }
         .filtre{
-            @include pDecor(11%);
-            margin-right: 5%;
+            @include pDecor(22%);
+            background-color: $content-color;
+            margin-right: 11%;
+            p{
+                i{
+                    padding-right: 5px;
+                }
+            }
         }
         .search input{
-            @include input(40%,45px,$content-color,$white-color);
+            @include input(40%,45px,$content-color,$white-color,50px,$header-color,45px);
             
         }
         .fa-search{
             position: absolute;
             bottom: 16px;
-            right: 395px;
+            right: 96%;
             color: $white-color;
         }
         .fa-map-marker-alt{
             position: absolute;
             color: $white-color;
             bottom: 19px;
-            right: 105px;
+            right: 16%;
         }
         .fas{
-            padding-right: 10px;
+            //padding-right: 10px;
         }
         .elefiltre{
             position: absolute;
@@ -111,6 +121,16 @@
             text-align: center;
             margin-top: 10px;
             cursor: pointer;
+        }
+    }
+    .contentblockservice,.contentblockreasearchservice,.contentblockneed,.contentblockproduct,.contentblockad{
+        position: relative;
+        margin-top: 188px;
+        h2{
+            color: $content-color;
+            padding-left: 10%;
+            margin: 60px 0;
+            
         }
     }
 

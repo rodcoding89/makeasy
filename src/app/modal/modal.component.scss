@@ -1,0 +1,10 @@
+.dialog{
+    position: fixed;
+    z-index: 111;
+    top: 0;
+    width: 50%;
+    left: calc(100% / 2 - 50% / 2);
+    background-color: cadetblue;
+    bottom: 0;
+    margin: 50px 0;
+}

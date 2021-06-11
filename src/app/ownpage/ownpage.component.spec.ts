@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { IndividualComponent } from './individual.component';
+import { OwnpageComponent } from './ownpage.component';
 
-describe('IndividualComponent', () => {
-  let component: IndividualComponent;
-  let fixture: ComponentFixture<IndividualComponent>;
+describe('OwnpageComponent', () => {
+  let component: OwnpageComponent;
+  let fixture: ComponentFixture<OwnpageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ IndividualComponent ]
+      declarations: [ OwnpageComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(IndividualComponent);
+    fixture = TestBed.createComponent(OwnpageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

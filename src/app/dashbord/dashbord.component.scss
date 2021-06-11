@@ -20,7 +20,7 @@
         a{
             text-decoration: none;
         }
-        .deconn,.feedback,.person{
+        .feedback,.person{
             font-size: 0.8em;
             padding: 10px;
             color: $white-color;
@@ -48,18 +48,16 @@
         }
     }
     .innercontent{
-        background-color: lavender;
         .firstblock{
             .subhead{
                 position: absolute;
-                top: -37px;
+                top: -140px;
                 left: 25%;
-                width: 17%;
                 display: flex;
                 justify-content: space-between;
             }
             .name{
-                padding: 45px 11px 0 0;
+                padding: 45px 11px 0 15px;
             }
             .userauth{
                 width: 95px;
@@ -69,14 +67,14 @@
                 box-shadow: 0px 0px 3px 2px $header-color;
             }
         }
+        
         .otherblock{
-            width: 80%;
-            left: 10%;
-            top: 161px;
-            position: absolute;
+            @include centerEl();
+            margin-top: 100px;
             display: grid;
             grid-template-columns: auto auto auto;
             grid-gap: 30px 40px;
+
             .item{
                 height: 205px;
                 background-color: black;
@@ -100,22 +98,32 @@
             }
         }
     }
+    .doingservice p{
+        margin-bottom: 10px;
+    }
+    .deconn{
+        margin: 50px auto;
+        width: 60%;
+        text-align: center;
+        box-shadow: 0px 0px 3px 1px grey;
+        border-radius: 5px;
+        padding: 20px;
+        cursor: pointer;
+    }
     .personalized{
-        position: absolute;
-        left: 10%;
-        top: 170px;
+        position: relative;
         width: 100%;
+        margin-top: 100px;
     }
     .personalizedcontent{
-        width: 74%;
-        
         box-shadow: 0px 0px 3px 2px $header-color;
         background-color: $content-color;
         
         border-radius: 5px;
         padding: 40px;
-        h2{
+        h3{
             color: $white-color;
+            font-size: 1.3em;
         }
         .textcontact,.myexchange,.doingservice,.proposedService{
             margin-bottom: 50px;
@@ -130,17 +138,378 @@
         .innercontentblock{
             @include centerEl();
         }
-        .back,.activepage{
+        .back{
             padding: 10px;
             position: absolute;
-            right: 20%;
-            top: -110px;
+            right: 0%;
+            top: -70px;
             box-shadow: 0 3px 2px $header-color;
             cursor: pointer;
         }
         .activepage{
             position: relative;
+            color: $white-color;
+            margin: 60px auto 30px;
+            width: 95%;
+            text-align: center;
+            box-shadow: 0px 0px 3px 1px $header-color;
+            border-radius: 5px;
+            padding: 15px;
+            cursor: pointer;
+        }
+    }
+    .personalizedblock{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+    .followForm{
+        width: 150%;
+        text-align: center;
+        margin: 0 30px 0 0;
+        h5{
+            color: $header-color;
+        }
+        .circle, .circle1, .circle3{
+            background-color: $white-color;
+            width: 50px;
+            height: 50px;
+            border-radius: 35px;
+            display: inline-block;
+            color: $content-color;
+            position: relative;
+            
+        }
+        .circle,.circle3{
+            b{
+                position: absolute;
+                left: 21px;
+                top: 15px;
+                z-index: 1;
+                color: $header-color;
+            }
+        }
+        .circle1{
+            width: 25px;
+            height: 25px;
+            b{
+                position: absolute;
+                left: 9px;
+                top: 3px;
+                z-index: 1;
+                color: $header-color;
+            }
+        }
+        .addressdata,.imgdata{
+            margin-top: 40px;
+        }
+        .circle3{
+            margin-top: 40px;
+        }
+        
+        .imgdata .line1{
+            top: 428px;
+        }
+        .line,.line1{
+            background-color: $white-color;
+            width: 2px;
+            height: 119px;
+            display: inline-block;
+            position: absolute;
+            left: 254px;
+            top: 183px;
         }
     }
     
+    .paymentmethod{
+        width: 190%;
+    }
+    .bussnessname, .contentdiaspora, .contentlocal{
+        input{
+            @include input(97%,40px,$white-color,block,0,gray);
+            &:focus-within{
+                border: 1px solid gray;
+                outline: none;
+            }
+        }
+    }
+    .profil,.service,.research,.product,.need,.ad,.feedback,.contact{
+        margin-top: 102px;
+        position: relative;
+    }
+    .addaddress{
+        position: absolute;
+        bottom: 0;
+        left: 135px;
+        width: 75.5%;
+        background-color: aqua;
+        text-align: center;
+    }
+    .servicecontent,.researchcontent,.productcontent,.needcontent,.adcontent,.feedbackcontent,.contactcontent{
+        position: relative;
+        h2{
+            text-align: center;
+        }
+    }
+    .profilcontent{
+        background-color: lavender;
+        position: relative;
+        height: 818px;
+        h3{
+            text-align: center;
+            padding: 20px;
+            font-size: 1.4em;
+        }
+        h5{
+            text-align: center;
+            font-size: 1.1em;
+        }
+    }
+    .contentdiaspora, .contentlocal{
+        background-color: rgba($color: $white-color, $alpha: 0.5);
+        padding: 50px;
+        margin: 85px 12.5%;
+        position: absolute;
+        left: 0;
+        top: 160px;
+        width: 66%;
+        p{
+            color: $content-color;
+        }
+    }
+    .localisationblock{
+        display: flex;
+        justify-content: space-between;
+        @include centerEl(75%);
+    }
+    .localblock,.diasporablock{
+        text-align: center;
+        width: 43%;
+        padding: 15px;
+        background-color: white;
+        margin-bottom: 20px;
+        cursor: pointer;
+    }
+    .diaspora, .local{
+        //position: absolute;
+        //top: 40px;
+        //left: 6%;
+        
+    }
+    .localactive,.diaspoactive{
+        background-color: $header-color;
+    }
+    .error{
+        text-align: left;
+        margin: 10px 0 0 0px;
+        color: red;
+        font-size: 0.85em;
+        font-family: inherit;
+    }
+    .bt{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        .preview{
+            padding: 0px 20px;
+            box-shadow: 0px 0px 3px 1px white;
+            border-radius: 5px;
+            margin-top: 39px;
+            cursor: pointer;
+        }
+        .createpage{
+            margin-top: 38px;
+            button{
+                background: transparent;
+                border: none;
+                outline: none;
+                background-color: transparent;
+                color: $white-color;
+                cursor: pointer;
+            }
+            padding: 20px;
+            box-shadow: 0px 0px 3px 0px white;
+            border-radius: 5px;
+        }
+    }
+    .pagedescription{
+        background-color: rgba($color: $white-color, $alpha: 0.5);
+        padding: 40px;
+    }
+    .description{
+        textarea{
+            @include textarea(96%,80px,$white-color);
+            &:focus{
+                border-color: gray;
+                outline: none;
+            } 
+        }
+    }
+    .photo{
+        width: 0.1px;
+        height: 0.1px;
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        z-index: -1; 
+    }
+    .photo + label {
+        font-size: 1.25em;
+        font-weight: 700;
+        color: white;
+        background-color: black;
+        display: inline-block;
+        padding: 10px 15px;
+        cursor: pointer;
+        .fa-upload{
+            padding-right: 7px;
+        }
+    }
+    
+    .photo:focus + label,
+    .photo + label:hover {
+        background-color: darkblue;
+    }
+    
 }
+.StripeElement{
+    height: 40px;
+    background-color: $white-color;
+}
+.card,.buy,.name{
+    height: 60px;
+}
+
+.ElementsApp input{
+    border: 1px solid gray;
+}
+
+.element{
+    display: grid;
+    grid-template-columns: 31% 31% 31%;
+    grid-gap: 40px 40px;
+    .item{
+        position: relative;
+        height: 208px;
+        padding: 15px;
+        background-color: brown;
+        .bts{
+            position: absolute;
+            bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            width: 90%;
+            div{
+                padding: 15px;
+                background-color: burlywood;
+                cursor: pointer;
+            }
+        }
+    }
+}
+@media only screen and (min-width: 320px) and (max-width: 1205px) {
+    .content {
+        .innercontent{
+            .firstblock{
+                .subhead{
+                   top: -38px;
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width: 320px) and (max-width: 1024px) {
+    .content {
+        .deconn{
+            position: absolute;
+            top: 905px;
+            left: 20%;
+        }
+        .innercontent{
+            .otherblock{
+                position: absolute;
+                left: 10%;
+                z-index: -1;
+            }
+        }
+    }
+}
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+    .content .innercontent .otherblock{
+        grid-template-columns: auto auto;
+        position: absolute;
+        left: 10%;
+        top: 120px;
+        z-index: -1;
+        margin-top: 0;
+        .item{
+            height: 225px;
+        }
+    }
+    .content {
+        .innercontent{
+            .firstblock{
+                .subhead{
+                    top: 8px;
+                    left: 10%;
+                    z-index: -1;
+                }
+            }
+        }
+    }
+    .content .deconn{
+        position: absolute;
+        bottom: -1676px;
+        left: 10%;
+        width: 74.5%;
+    }
+    .element{
+        grid-template-columns: 49% 49%;
+        width: 100%;
+        grid-gap: 20px 20px;
+        position: absolute;
+        top: 66px;
+        left: 0;
+        .item{
+            .bts{
+                div{
+                    font-size: 0.8em;
+                }
+            }
+        }
+    }
+    .content .personalized, .content .profil,.content .service, .content .research, .content .ad, .content .feedback, .content .contact{
+        width: 81%;
+        position: absolute;
+        top: 129px;
+        left: 10%;
+        margin-top: 0;
+    }
+}
+@media only screen and (min-width: 320px) and (max-width: 425px) {
+    .content{
+        .innercontent{
+            .otherblock{
+                grid-template-columns: auto;
+            }
+        }
+        .deconn{
+            bottom: -2899px;
+            width: 71.5%;
+        }
+        .contentblock{
+            .back{
+                width: 95%;
+                text-align: center;
+                top: -57px;
+            }
+        }
+        .followForm{
+            display: none;
+        }
+    }
+    .element{
+        grid-template-columns: 100%;
+    }
+}
+

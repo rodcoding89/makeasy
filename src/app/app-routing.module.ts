@@ -8,17 +8,18 @@ import { InsertResearchServiceOrAdComponent } from './action/insert-research-ser
 import { InsertServiceComponent } from './action/insert-service/insert-service.component';
 import { AuthentificationComponent } from './authentification/authentification.component';
 import { CompanyComponent } from './authentification/company/company.component';
-import { CustomerComponent } from './authentification/customer/customer.component';
+import { OwnpageComponent } from "../app/ownpage/ownpage.component";
+
 import { IndividualComponent } from './authentification/individual/individual.component';
-import { PageNotFoundComponent } from './authentification/page-not-found/page-not-found.component';
 import { BidComponent } from './bid/bid.component';
 import { ContactComponent } from './contact/contact.component';
 import { DashbordComponent } from './dashbord/dashbord.component';
-import { MescontactsComponent } from './dashbord/mescontacts/mescontacts.component';
-import { MesechangesComponent } from './dashbord/mesechanges/mesechanges.component';
-import { PesonnaliseComponent } from './dashbord/pesonnalise/pesonnalise.component';
-import { HomeComponent } from './home/home.component';
+
 import { LoginGuardService } from "../app/services/login-guard.service";
+import { HomeComponent } from './home/home.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { OwnpageUserComponent } from './ownpage-user/ownpage-user.component';
+
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -30,15 +31,13 @@ const routes: Routes = [
       {path:'insert-research-service', component:InsertResearchServiceOrAdComponent},
       {path:'insert-product', component:InsertProductComponent},
       { path: '',   redirectTo: 'insert-service', pathMatch: 'full' }]}, //{ path: '',   redirectTo: '/insert-service', pathMatch: 'full' }
-  {path: 'depot', component: BidComponent},
+  //{path: 'depot', component: BidComponent},
   {path: 'dashboard', component: DashbordComponent,
-    canActivate:[LoginGuardService],
-    children:[
-      {path: 'mycontacts',component:MescontactsComponent},
-      {path: 'myexchanges',component:MesechangesComponent},
-      {path:'personalized',component:PesonnaliseComponent}
-  ]},
+    canActivate:[LoginGuardService]},
   {path: 'contact', component: ContactComponent},
+  //{path: 'payment', component: ContactComponent},
+  {path: 'ownpage',component: OwnpageComponent},
+  {path: 'ownpage-user/:user',component: OwnpageUserComponent},
   {path: 'authentification', component: AuthentificationComponent,
     children: [
       {path: 'company',component: CompanyComponent},

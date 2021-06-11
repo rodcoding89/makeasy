@@ -2,16 +2,13 @@
     <div class="content">
         
         <div class="innerpage">
-            <div class="category" (click) = "showCategory()">
-                <p class="categorie">{{optionValue}}<i class="fas fa-caret-down"></i></p>
-            </div>
+            
             <div class="categoriContent" *ngIf="isCategory">
-                <div class="item"*ngFor="let category of categorys">
-                    <p><i class="{{category.icon}}"></i>{{category.name}}</p>
-                    <div class="element" *ngFor="let categ of category.souscategory">
-                        <spam (click)="getItemValue(categ,category.name)">{{categ}}</spam>
-                    </div>
-                </div>
+                <div class="item" translate (click) = "getItemCategValue('Service')">Service</div>
+                <div class="item" translate (click) = "getItemCategValue('Recherche de Service')">Recherche de Service</div>
+                <div class="item" translate (click) = "getItemCategValue('Produit')">Produit</div>
+                <div class="item" translate (click) = "getItemCategValue('Besoin')">Besoin</div>
+                <div class="item" translate (click) = "getItemCategValue('Annonce')">Annonce</div>
             </div>
             <div class="myform">
                 <div class="filtre" (click)="showhideFilter()"><p translate><i class="fas fa-list"></i>Filtre</p></div>
@@ -31,6 +28,10 @@
                     <p translate>Occasion</p>
                     <input type="checkbox" class="occasion">
                    </div>
+                   <input (keypress) = "locationKeypress()" value="{{locatiovalue}}" autocomplete="off" type="text" [(ngModel)] = "searchLocation" name = "searchLocation" placeholder="Indiquer la Region" translate><i class="fas fa-map-marker-alt"></i>
+                   <div class="locationblock" (mouseleave) = "hideLocationBlock()" *ngIf="isLocation" >
+                       <div (click)="locationItem(l.city)" class="locationItem" *ngFor="let l of locat | locationFilter: searchLocation">{{l.city}}</div>
+                   </div>
                    <div class="apply" (click)="applyingFilter()"><p translate>Appliquer le Filtrage</p></div>
                 </div>
                 <form action="" method="get" class="search">
@@ -43,14 +44,318 @@
                         </div>    
                         
                     </div>
-                    <input (keypress) = "locationKeypress()" value="{{locatiovalue}}" autocomplete="off" type="text" [(ngModel)] = "searchLocation" name = "searchLocation" placeholder="Indiquer la Region" translate><i class="fas fa-map-marker-alt"></i>
-                    <div class="locationblock" (mouseleave) = "hideLocationBlock()" *ngIf="isLocation" >
-                        <div (click)="locationItem(l.city)" class="locationItem" *ngFor="let l of locat | locationFilter: searchLocation">{{l.city}}</div>
+                    <div class="category" (click) = "showCategory()"><i class="fas fa-caret-down"></i>
+                        <p class="categorie">{{optionValue}}</p>
                     </div>
                     <div class="go"><p translate>GO <i class="fas fa-chevron-right"></i></p></div>
                 </form>
             </div>
             
+        </div>
+        <div class="contentnavi">
+            <div class="service" [ngClass] = "{active: isServiceItem}" translate (click) = "loadData('service')">Services</div>
+            <div [ngClass] = "{active: isResearchItem}" class="researchservice" translate (click) = "loadData('research')">Recherche de Services</div>
+            <div [ngClass] = "{active: isNeedItem}" class="need" translate (click) = "loadData('need')">Besoins</div>
+            <div [ngClass] = "{active: isAdItem}" class="ad" translate (click) = "loadData('ad')">Annonces</div>
+            <div [ngClass] = "{active: isProductItem}" class="product" translate (click) = "loadData('product')">Produits</div>
+        </div>
+        <div class="contentblockservice" *ngIf = "isService">
+            <h2 translate>Categorie Service</h2>
+            <div class="contentservice" >
+                <div class="item" *ngFor="let data of servicedata">
+                    <div class="img">
+                        <img src="{{data.firsturl}}" alt="" sizes="" srcset="">
+                    </div>
+                    <div class="textblock" (click) = "detailPage(data)">
+                        <h3>{{data.servicename}}</h3>
+                        <p translate>{{data.prix}}</p>
+                        <p>{{data.city}}-{{data.region}}</p>
+                        <p>Posté le {{data.date}}</p><br/>
+                        <p class="para">{{data.servicedescription.split(" ", 8).join(" ")}} ...</p>
+                        <p translate class="detail">Plus de detail</p>
+                    </div>
+                </div>
+                <div class="over" *ngIf="showDialog">
+                    <modal *ngIf="showDialog" class="dialog">
+                        <div class="imgcontent">
+                            <div class="imgblock">
+                                <img src="{{l}}" alt="" *ngFor = "let l of link" (click) = "showImage(l)">
+                            </div>
+                            <div class="showimg">
+                                <img src="{{imgurl}}" alt="" srcset="">
+                            </div>
+                        </div>
+                        <div class="otherblock">
+                            <div class="textcontent">
+                                <h1>{{sname}}</h1>
+                                <p>{{sprix}}</p>
+                                <p>{{sdescription}}</p>
+                                <h2 translate>Localisation </h2>
+                                <p>Rue ou Quartier : {{sruequartier}}</p>
+                                <p>Ville : {{scity}}</p>
+                                <p>Region : {{sregion}}</p>
+                                <p>Pays : {{spays}}</p>
+                            </div>
+                            <div class="contact">
+                                <div class="contactel1">
+                                    <div class="user">
+                                        <i class="fas fa-user fa-2x"></i>
+                                        <p>{{sfname}} {{slname}}</p>
+                                    </div>
+                                    <p translate class="pcontact" (click) = "sendMessage()">ENVOYER UN MESSAGE</p>
+                                    <div class="message" *ngIf = "isMessage">
+                                        <textarea name="" id="" cols="30" rows="10"></textarea>
+                                        <p>ENVOYER LE MESSAGE</p>
+                                    </div>
+                                    <p class="pcontact" (click) = "showNumber()">{{viewnumber}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button (click)="showDialog = !showDialog" class="btn">Close</button>
+                    </modal>
+                </div>
+                
+            </div>
+            <div class="servicedetail">
+                
+            </div>
+        </div>
+        <div class="contentblockreasearchservice" *ngIf = "isResearchService">
+            <h2 translate>Categorie recherche Service</h2>
+            <div class="contentservice" >
+                <div class="item" *ngFor="let data of researchservicedata">
+                    <div class="img">
+                        <img src="{{data.firsturl}}" alt="" sizes="" srcset="">
+                    </div>
+                    <div class="textblock" (click) = "detailResearchPage(data)">
+                        <h3>{{data.researchname}}</h3>
+                        <p translate>{{data.prix}}</p>
+                        <p>{{data.city}}-{{data.region}}</p>
+                        <p>Posté le {{data.date}}</p><br/>
+                        <p class="para">{{data.researchdescription.split(" ", 8).join(" ")}} ...</p>
+                        <p translate class="detail">Plus de detail</p>
+                    </div>
+                </div>
+                <div class="over" *ngIf="showDialog">
+                    <modal *ngIf="showDialog" class="dialog">
+                        <div class="imgcontent">
+                            <div class="imgblock">
+                                <img src="{{l}}" alt="" *ngFor = "let l of link" (click) = "showImage(l)">
+                            </div>
+                            <div class="showimg">
+                                <img src="{{imgurl}}" alt="" srcset="">
+                            </div>
+                        </div>
+                        <div class="otherblock">
+                            <div class="textcontent">
+                                <h1>{{sname}}</h1>
+                                <p>{{sprix}}</p>
+                                <p>{{sdescription}}</p>
+                                <h2 translate>Localisation </h2>
+                                <p>Rue ou Quartier : {{sruequartier}}</p>
+                                <p>Ville : {{scity}}</p>
+                                <p>Region : {{sregion}}</p>
+                                <p>Pays : {{spays}}</p>
+                            </div>
+                            <div class="contact">
+                                <div class="contactel1">
+                                    <div class="user">
+                                        <i class="fas fa-user fa-2x"></i>
+                                        <p>{{sfname}} {{slname}}</p>
+                                    </div>
+                                    <p translate class="pcontact" (click) = "sendMessage()">ENVOYER UN MESSAGE</p>
+                                    <div class="message" *ngIf = "isMessage">
+                                        <textarea name="" id="" cols="30" rows="10"></textarea>
+                                        <p>ENVOYER LE MESSAGE</p>
+                                    </div>
+                                    <p class="pcontact" (click) = "showNumber()">{{viewnumber}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button (click)="showDialog = !showDialog" class="btn">Close</button>
+                    </modal>
+                </div>
+                
+            </div>
+        </div>
+        <div class="contentblockneed" *ngIf = "isNeed">
+            <h2 translate>Categorie Besoin</h2>
+            <div class="contentservice" >
+                <div class="item" *ngFor="let data of needdata">
+                    <div class="img">
+                        <img src="{{data.firsturl}}" alt="" sizes="" srcset="">
+                    </div>
+                    <div class="textblock" (click) = "detailNeedPage(data)">
+                        <h3>{{data.needname}}</h3>
+                        <p translate>{{data.prix}}</p>
+                        <p>{{data.city}}-{{data.region}}</p>
+                        <p>Posté le {{data.date}}</p><br/>
+                        <p class="para">{{data.needdescription.split(" ", 8).join(" ")}} ...</p>
+                        <p translate class="detail">Plus de detail</p>
+                    </div>
+                </div>
+                <div class="over" *ngIf="showDialog">
+                    <modal *ngIf="showDialog" class="dialog">
+                        <div class="imgcontent">
+                            <div class="imgblock">
+                                <img src="{{l}}" alt="" *ngFor = "let l of link" (click) = "showImage(l)">
+                            </div>
+                            <div class="showimg">
+                                <img src="{{imgurl}}" alt="" srcset="">
+                            </div>
+                        </div>
+                        <div class="otherblock">
+                            <div class="textcontent">
+                                <h1>{{sname}}</h1>
+                                <p>{{sprix}}</p>
+                                <p>{{sdescription}}</p>
+                                <h2 translate>Localisation </h2>
+                                <p>Rue ou Quartier : {{sruequartier}}</p>
+                                <p>Ville : {{scity}}</p>
+                                <p>Region : {{sregion}}</p>
+                                <p>Pays : {{spays}}</p>
+                            </div>
+                            <div class="contact">
+                                <div class="contactel1">
+                                    <div class="user">
+                                        <i class="fas fa-user fa-2x"></i>
+                                        <p>{{sfname}} {{slname}}</p>
+                                    </div>
+                                    <p translate class="pcontact" (click) = "sendMessage()">ENVOYER UN MESSAGE</p>
+                                    <div class="message" *ngIf = "isMessage">
+                                        <textarea name="" id="" cols="30" rows="10"></textarea>
+                                        <p>ENVOYER LE MESSAGE</p>
+                                    </div>
+                                    <p class="pcontact" (click) = "showNumber()">{{viewnumber}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button (click)="showDialog = !showDialog" class="btn">Close</button>
+                    </modal>
+                </div>
+                
+            </div>
+        </div>
+        <div class="contentblockproduct" *ngIf = "isProduct">
+            <h2 translate>Categorie Produit</h2>
+            <div class="contentservice" >
+                <div class="item" *ngFor="let data of productdata">
+                    <div class="img">
+                        <img src="{{data.firsturl}}" alt="" sizes="" srcset="">
+                    </div>
+                    <div class="textblock" (click) = "detailProductPage(data)">
+                        <h3>{{data.productname}}</h3>
+                        <p translate>{{data.prix}}</p>
+                        <p>{{data.city}}-{{data.region}}</p>
+                        <p>Posté le {{data.date}}</p><br/>
+                        <p class="para">{{data.productdescription.split(" ", 8).join(" ")}} ...</p>
+                        <p translate class="detail">Plus de detail</p>
+                    </div>
+                </div>
+                <div class="over" *ngIf="showDialog">
+                    <modal *ngIf="showDialog" class="dialog">
+                        <div class="imgcontent">
+                            <div class="imgblock">
+                                <img src="{{l}}" alt="" *ngFor = "let l of link" (click) = "showImage(l)">
+                            </div>
+                            <div class="showimg">
+                                <img src="{{imgurl}}" alt="" srcset="">
+                            </div>
+                        </div>
+                        <div class="otherblock">
+                            <div class="textcontent">
+                                <h1>{{sname}}</h1>
+                                <p>{{sprix}}</p>
+                                <p>{{sdescription}}</p>
+                                <h2 translate>Localisation </h2>
+                                <p>Rue ou Quartier : {{sruequartier}}</p>
+                                <p>Ville : {{scity}}</p>
+                                <p>Region : {{sregion}}</p>
+                                <p>Pays : {{spays}}</p>
+                            </div>
+                            <div class="contact">
+                                <div class="contactel1">
+                                    <div class="user">
+                                        <i class="fas fa-user fa-2x"></i>
+                                        <p>{{sfname}} {{slname}}</p>
+                                    </div>
+                                    <p translate class="pcontact" (click) = "sendMessage()">ENVOYER UN MESSAGE</p>
+                                    <div class="message" *ngIf = "isMessage">
+                                        <textarea name="" id="" cols="30" rows="10"></textarea>
+                                        <p>ENVOYER LE MESSAGE</p>
+                                    </div>
+                                    <p class="pcontact" (click) = "showNumber()">{{viewnumber}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button (click)="showDialog = !showDialog" class="btn">Close</button>
+                    </modal>
+                </div>
+                
+            </div>
+        </div>
+        <div class="contentblockad" *ngIf = "isAd">
+            <h2 translate>Categorie Annonce</h2>
+            <div class="contentservice" >
+                <div class="item" *ngFor="let data of addata">
+                    <div class="img">
+                        <img src="{{data.firsturl}}" alt="" sizes="" srcset="">
+                    </div>
+                    <div class="textblock" (click) = "detailAdPage(data)">
+                        <h3>{{data.adname}}</h3>
+                        <p translate>{{data.prix}}</p>
+                        <p>{{data.city}}-{{data.region}}</p>
+                        <p>Posté le {{data.date}}</p><br/>
+                        <p class="para">{{data.addescription.split(" ", 8).join(" ")}} ...</p>
+                        <p translate class="detail">Plus de detail</p>
+                    </div>
+                </div>
+                <div class="over" *ngIf="showDialog">
+                    <modal *ngIf="showDialog" class="dialog">
+                        <div class="imgcontent">
+                            <div class="imgblock">
+                                <img src="{{l}}" alt="" *ngFor = "let l of link" (click) = "showImage(l)">
+                            </div>
+                            <div class="showimg">
+                                <img src="{{imgurl}}" alt="" srcset="">
+                            </div>
+                        </div>
+                        <div class="otherblock">
+                            <div class="textcontent">
+                                <h1>{{sname}}</h1>
+                                <p>{{sprix}}</p>
+                                <p>{{sdescription}}</p>
+                                <h2 translate>Localisation </h2>
+                                <p>Rue ou Quartier : {{sruequartier}}</p>
+                                <p>Ville : {{scity}}</p>
+                                <p>Region : {{sregion}}</p>
+                                <p>Pays : {{spays}}</p>
+                            </div>
+                            <div class="contact">
+                                <div class="contactel1">
+                                    <div class="user">
+                                        <i class="fas fa-user fa-2x"></i>
+                                        <p>{{sfname}} {{slname}}</p>
+                                    </div>
+                                    <p translate class="pcontact" (click) = "sendMessage()">ENVOYER UN MESSAGE</p>
+                                    <div class="message" *ngIf = "isMessage">
+                                        <textarea name="" id="" cols="30" rows="10"></textarea>
+                                        <p>ENVOYER LE MESSAGE</p>
+                                    </div>
+                                    <p class="pcontact" (click) = "showNumber()">{{viewnumber}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button (click)="showDialog = !showDialog" class="btn">Close</button>
+                    </modal>
+                </div>
+                
+            </div>
         </div>
     </div>
 </div>

@@ -1,6 +1,6 @@
 <div class="authcontent">
     <div class="partone">
-        <div class="signtext" [@leftright1]="stateName">
+        <div class="signtext" [@leftright1]="stateName" *ngIf="isConn">
             <div class="hidediv" *ngIf="isSignText">
                 <h2 translate>Creation du compte</h2>
                 <h3 translate>Salut Salut !!!</h3>
@@ -26,7 +26,7 @@
                 <p translate class="text">Connecter vous de maniere sécurisé et sans sourci</p>
                 <form action="" method="post" [formGroup] = "loginForm" (ngSubmit) = "onSubmit()">
                     <div class="lemail">
-                        <p translate>Email</p>
+                        <p translate>Email</p><i class="fas fa-envelope"></i>
                         <input autocomplete="off" id="lemail" required type="email" placeholder="yourmail@mail.com" formControlName= "lemail" name="lemail" [ngClass]="{ 'is-invalid': loginForm.get('lemail').errors }">
                         <div *ngIf="loginForm.get('lemail').errors && (loginForm.get('lemail').dirty || loginForm.get('lemail').touched)" class="error">
                             <div *ngIf="loginForm.get('lemail').errors.required" translate>Le Mail Address est reccommandé</div>
@@ -37,7 +37,7 @@
                         </div>
                     </div>
                     <div class="lpass">
-                        <p translate>Mot de passe</p>
+                        <p translate>Mot de passe</p><i class="fas fa-key"></i>
                         <input required type="password" placeholder="********" formControlName = "lpass">
                         <div *ngIf="loginForm.get('lpass').errors && (loginForm.get('lpass').dirty || loginForm.get('lpass').touched)" class="error">
                             <div *ngIf="loginForm.get('lpass').errors.required" translate>Le Mot de pass est reccommandé</div>
@@ -56,7 +56,7 @@
                     <p translate class="text">ces données seront enregistrés dans notre base de donnée de maniére securisé</p>
                     <form action="" method="post" [formGroup] = "signForm" (ngSubmit) = "onSignSubmit()">
                         <div class="name">
-                            <p translate>Nom*</p>
+                            <p translate>Nom*</p><i class="fas fa-user"></i>
                             <input type="text" placeholder="Andis" required formControlName="fname">
                             <div *ngIf="signForm.get('fname').errors && (signForm.get('fname').dirty || signForm.get('fname').touched)" class="error">
                                 <div *ngIf="signForm.get('fname').errors.required" translate>Le Nom est obligatoir</div>
@@ -67,7 +67,7 @@
                             </div>
                         </div>
                         <div class="lname">
-                            <p translate>Prenom*</p>
+                            <p translate>Prenom*</p><i class="fas fa-user"></i>
                             <input type="text" placeholder="Prenom" required formControlName = "lname">
                             <div *ngIf="signForm.get('lname').errors && (signForm.get('lname').dirty || signForm.get('lname').touched)" class="error">
                                 <div *ngIf="signForm.get('lname').errors.required" translate>Le Prénom est obligatoir</div>
@@ -78,7 +78,7 @@
                             </div>
                         </div>
                         <div class="email">
-                            <p translate>Email*</p>
+                            <p translate>Email*</p><i class="fas fa-envelope"></i>
                             <input (keypress) = "hideEmailErroru()" type="email" placeholder="yourmail@mail.com" required formControlName="email">
                             <div *ngIf="signForm.get('email').errors && (signForm.get('email').dirty || signForm.get('email').touched)" class="error">
                                 <div *ngIf="signForm.get('email').errors.required" translate>Le Mail Address est obligatoir</div>
@@ -90,7 +90,7 @@
                             </div>
                         </div>
                         <div class="tel">
-                            <p translate>Télephone Portable*</p>
+                            <p translate>Télephone Portable*</p><i class="fas fa-phone-alt"></i>
                             <input (keypress) = "hideTelErroru()" type="tel" placeholder="00785565665" required formControlName = "tel">
                             <div *ngIf="signForm.get('tel').errors && (signForm.get('tel').dirty || signForm.get('tel').touched)" class="error">
                                 <div *ngIf="signForm.get('tel').errors.required" translate>Le Numero de Téléphone est obligatoir</div>
@@ -102,7 +102,7 @@
                             </div>
                         </div>
                         <div class="pass">
-                            <p translate>Mot de passe*</p>
+                            <p translate>Mot de passe*</p><i class="fas fa-key"></i>
                             <input type="password" placeholder="******" required formControlName ="spass">
                             <div *ngIf="signForm.get('spass').errors && (signForm.get('spass').dirty || signForm.get('spass').touched)" class="error">
                                 <div *ngIf="signForm.get('spass').errors.required" translate>Le Mot de pass est reccommandé</div>
@@ -113,7 +113,7 @@
                             </div>
                         </div>
                         <div class="cpass">
-                            <p translate>Confirmation du Mot de Passe*</p>
+                            <p translate>Confirmation du Mot de Passe*</p><i class="fas fa-key"></i>
                             <input type="password" placeholder="******" required formControlName = "cpass">
                             <div *ngIf="signForm.get('cpass').errors && (signForm.get('cpass').dirty || signForm.get('cpass').touched)" class="error">
                                 <div *ngIf="signForm.get('cpass').errors.required" translate>Le Mot de pass est reccommandé</div>

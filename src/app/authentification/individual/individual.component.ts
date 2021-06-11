@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,HostListener } from '@angular/core';
 import {
   trigger,
   state,
@@ -56,8 +56,20 @@ export class IndividualComponent implements OnInit {
   public isEmailUsed : boolean;
   public isTelUsed : boolean;
   public url = 'http://localhost:3535';
+  public screenWidth : any;
+  public isConn = true;
   
-  constructor(private fb: FormBuilder,private handler: HandlingDataService,private router:Router) { }
+  @HostListener('window:resize', ['$event'])
+
+  onResize(event) {
+
+    this.screenWidth = window.innerWidth;
+
+  }
+
+  constructor(private fb: FormBuilder,private handler: HandlingDataService,private router:Router) { 
+    console.log("size " ,this.screenWidth)
+  }
 
   public loginForm = this.fb.group({
     lemail: new FormControl('', [Validators.required, Validators.email]),
@@ -107,6 +119,8 @@ export class IndividualComponent implements OnInit {
     this.isConfirmError = false;
     this.isEmailUsed = false;
     this.isTelUsed = false;
+    this.screenWidth = window.screen.width;
+    console.log("size " ,this.screenWidth)
   }
 
   get stateName() {
@@ -117,12 +131,18 @@ export class IndividualComponent implements OnInit {
   }
 
   createAccount($event) {
-    this.left = !this.left;
-    this.right1 = !this.right1;
-    this.isSignText = false;
-    this.isLoginText = true;
-    this.isLogin = false;
-    this.isSign = true;
+    console.log(window.screen.width);
+    if (window.screen.width <= 768) {
+      this.isConn = false;
+      console.log("test");
+    } else {
+      this.left = !this.left;
+      this.right1 = !this.right1;
+      this.isSignText = false;
+      this.isLoginText = true;
+      this.isLogin = false;
+      this.isSign = true;
+    }
   }
   connexion($event){
     this.left = !this.left;
@@ -139,17 +159,22 @@ export class IndividualComponent implements OnInit {
         if (res.data === 'pass') {
           
         }else if (res.data === 'email') {
-          
-        }else if(res.data === 'success'){
-          localStorage.setItem("user","loa");
+          alert("Vos données sont incorrect");
+          //console.log(res.data.data.message);
+        }else if(res.data.status === 'success'){
+          const data = res.data.name+"-"+res.data.id;
+          localStorage.setItem("user",data);
           if(localStorage.getItem('user')){
             this.router.navigate(['dashboard']);
           }
           //this.router.navigate(['dashboard']);
+        }else{
+          alert(res.data);
         }
       },
       err => {
         console.log('Error occured:' , err);
+        alert("Le Server ne reponds pas Veillé réssayé ulteurierement")
       }
     );
     

@@ -1,0 +1,48 @@
+@import '../../scss/variable.scss';
+@import '../../environments/themes/page.scss';
+.ownpage{
+    width: 100%;
+    .ownpagecontentblock{
+        @include centerEl();
+        margin-top: 50px;
+        display: grid;
+        grid-gap: 30px 40px;
+        grid-template-columns: 31% 31% 31%;
+        a{
+            text-decoration: none;
+        }
+        .item{
+            height: 205px;
+            background-color: black;
+            box-shadow: 0px 0px 3px 2px #ff0000ff;
+            border-radius: 5px;
+            cursor: pointer;
+            padding: 20px;
+            p,h3{
+                color: $white-color;
+            }
+            span{
+                color: $header-color;
+                float: right;
+            }
+            .icon{
+                i{
+                    color: $white-color;
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width: 320px) and (max-width: 1205px) {
+
+}
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+    .ownpage{
+        .ownpagecontentblock{
+            grid-template-columns: 47% 47%;
+            position: absolute;
+            left: 10%;
+            z-index: -1;
+        }
+    }
+}

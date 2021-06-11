@@ -1,0 +1,14 @@
+<div class="ownpage">
+    <div class="ownpagecontent">
+        <div class="ownpagecontentblock">
+            <a [routerLink]="['/ownpage-user/', data.labelname+'-'+data.userid]"  *ngFor = "let data of ownpagedata">
+                <div class="item">
+                    <div class="icon"><i class="fas fa-pager fa-2x"></i></div>
+                    <h3>{{data.labelname}}</h3>
+                    <p>{{data.labeldescription}}</p>
+                    <span translate>Voir mes Offres</span>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

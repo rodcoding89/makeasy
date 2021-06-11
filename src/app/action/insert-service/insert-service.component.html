@@ -1,35 +1,43 @@
+<div class="loader" *ngIf = "isLoader"><div class="lds-ripple"><div></div><div></div></div></div>
 <div class="insertService">
     <div class="formcontent">
         <div class="followForm">
             <div class="serviceData" *ngIf="isServiceData">
-                <h3>Étape d'insertion des données</h3>
-                <h5>Étape 1</h5>
-                <p>Données Concernant le Service</p>
+                <h3 translate>Étape d'insertion des données</h3>
+                <h5 translate>Étape 1</h5>
+                <p translate>Données Concernant le Service</p>
                 <div class="circle"><b>1</b></div>
             </div>
            <div class="addressdata" *ngIf="isAddressData">
                 <div class="line"></div>
                 <div class="circle1"><b>2</b></div>
-                <h5>Étape 2</h5>
-                <p>Données Concernant votre addresse</p>
+                <h5 translate>Étape 2</h5>
+                <p translate>Données Concernant votre addresse</p>
            </div>
            <div class="imgdata" *ngIf="isImageData">
                 <div class="circle1"><b>2</b></div><br/>
                 <div class="line1"></div>
                 <div class="circle3"><b>3</b></div>
-                <h5>Étape 3</h5>
-                <p>Insertion des Images et validation des données</p>
+                <h5 translate>Étape 3</h5>
+                <p translate>Insertion des Images et validation des données</p>
            </div>
         </div>
         <div class="formblock">
-            <form [formGroup] = "serviceForm" action="" method="post" (ngSubmit) = "submitInsertService()">
+            <form [formGroup] = "serviceForm" action="" method="post" (ngSubmit) = "submitInsertService($event)">
                 <div class="block1" [@leftright1]="stateName">
-                    <h3>Remplissez les données nécessaire pour l'ajouts du Sevice</h3>
+                    <h3>Remplissez les données nécessaire pour l'ajouts du Service</h3>
                     <div class="serviceName">
                         <p translate>Nom du Service</p>
                         <input type="text" name="" id="" placeholder="Offre des cours du soir" formControlName = "servicename">
                         <div *ngIf="serviceForm.get('servicename').errors && (serviceForm.get('servicename').dirty || serviceForm.get('servicename').touched)" class="error">
                             <div class="error" *ngIf="serviceForm.get('servicename').errors.required" translate>Le Nom du Service est reccommandé</div>
+                        </div>
+                    </div>
+                    <div class="serviceName">
+                        <p translate>Estimé un prix et indiquer la Monnaie*</p>
+                        <input type="text" name="" id="" placeholder="500 fcfa" formControlName = "prix">
+                        <div *ngIf="serviceForm.get('prix').errors && (serviceForm.get('prix').dirty || serviceForm.get('prix').touched)" class="error">
+                            <div class="error" *ngIf="serviceForm.get('prix').errors.required" translate>L'estimation du prix est reccommandé</div>
                         </div>
                     </div>
                     <div class="serviceDescription">
@@ -39,39 +47,79 @@
                             <div class="error" *ngIf="serviceForm.get('servicedescription').errors.required" translate>La Description du Service est reccommandé</div>
                         </div>
                     </div>
-                    <div class="serviceDescription1">
-                        <p translate>Description des Services déja rendus Quelques exemples suffisent</p>
-                        <textarea name="" placeholder="Entrer la Description des Services Anterieurs" id="" cols="30" rows="10" formControlName = "aservicedescription"></textarea>
-                    </div>
                     <div class="next" (click)="moveRight()"><p translate>SUIVANT</p></div>
                 </div>
                 <div class="block2" [@leftright2]="stateName1">
-                    <h3>Remplissez l'address de localisation</h3>
-                    <div class="distric">
-                        <p translate>Le Quartier *</p>
-                        <input type="text" name="" id="" placeholder="Indiquer le Quartier" formControlName = "distric">
-                        <div *ngIf="serviceForm.get('distric').errors && (serviceForm.get('distric').dirty || serviceForm.get('distric').touched)" class="error">
-                            <div class="error" *ngIf="serviceForm.get('distric').errors.required" translate>Le Nom du Quartier est reccommandé</div>
+                    <h3 translate>Remplissez l'address de localisation</h3>
+                    <div class="localisationblock">
+                        <div class="localblock" [ngClass] = "{'localactive':isLocal}" translate (click) = "localLeftRight()">Local</div>
+                        <div class="diasporablock" [ngClass] = "{'diaspoactive':isDiaspo}" translate (click) = "diaspoLeftRight()">Diaspora</div>
+                    </div>
+                    <div class="contentdiaspora" [@leftright4]="stateName3">
+                        <h3 translate>Vous residez a l'etrangé</h3>
+                        <div class="diaspora">
+                            <div class="distric">
+                                <p translate>La Rue *</p>
+                                <input type="text" name="" id="" placeholder="Indiquer la Rue" formControlName = "distric">
+                                <div *ngIf="serviceForm.get('distric').errors && (serviceForm.get('distric').dirty || serviceForm.get('distric').touched)" class="error">
+                                    <div class="error" *ngIf="serviceForm.get('distric').errors.required" translate>Le Nom de la Rue est reccommandé</div>
+                                </div>
+                            </div>
+                            <div class="city">
+                                <p translate>La Ville *</p>
+                                <input type="text" name="" id="" placeholder="Indiquer la Ville" formControlName = "city">
+                                <div *ngIf="serviceForm.get('city').errors && (serviceForm.get('city').dirty || serviceForm.get('city').touched)" class="error">
+                                    <div class="error" *ngIf="serviceForm.get('city').errors.required" translate>Le Nom de la Ville est reccommandé</div>
+                                </div>
+                            </div>
+                            <div class="region">
+                                <p translate>La Region *</p>
+                                <input type="text" name="" id="" placeholder="Indiquer la Region" formControlName = "region">
+                                <div *ngIf="serviceForm.get('region').errors && (serviceForm.get('region').dirty || serviceForm.get('region').touched)" class="error">
+                                    <div class="error" *ngIf="serviceForm.get('region').errors.required" translate>Le Nom de la Region est reccommandé</div>
+                                </div>
+                            </div>
+                            <div class="bpostal">
+                                <p translate>Le Pays*</p>
+                                <input type="text" name="" id="" placeholder="Indiquer le pays" formControlName = "pays">
+                            </div>
                         </div>
                     </div>
-                    <div class="city">
-                        <p translate>La Ville *</p>
-                        <input type="text" name="" id="" placeholder="Indiquer la Ville" formControlName = "city">
-                        <div *ngIf="serviceForm.get('city').errors && (serviceForm.get('city').dirty || serviceForm.get('city').touched)" class="error">
-                            <div class="error" *ngIf="serviceForm.get('city').errors.required" translate>Le Nom de la Ville est reccommandé</div>
+                    
+                    <div class="contentlocal" [@leftright4]="stateName4">
+                        <h3 translate>Vous Residez au cameroun</h3>
+                        <div class="local">
+                        
+                            <div class="distric">
+                                <p translate>Le Quartier *</p>
+                                <input type="text" name="" id="" placeholder="Indiquer le Quartier" formControlName = "distric">
+                                <div *ngIf="serviceForm.get('distric').errors && (serviceForm.get('distric').dirty || serviceForm.get('distric').touched)" class="error">
+                                    <div class="error" *ngIf="serviceForm.get('distric').errors.required" translate>Le Nom du Quartier est reccommandé</div>
+                                </div>
+                            </div>
+                            <div class="city">
+                                <p translate>La Ville *</p>
+                                <input type="text" name="" id="" placeholder="Indiquer la Ville" formControlName = "city">
+                                <div *ngIf="serviceForm.get('city').errors && (serviceForm.get('city').dirty || serviceForm.get('city').touched)" class="error">
+                                    <div class="error" *ngIf="serviceForm.get('city').errors.required" translate>Le Nom de la Ville est reccommandé</div>
+                                </div>
+                            </div>
+                            <div class="bpostal">
+                                <p translate>La Boite Postal</p>
+                                <input type="text" name="" id="" placeholder="Indiquer la Boite postale" formControlName = "bpostal">
+                            </div>
+                            <div class="region">
+                                <p translate>La Region *</p>
+                                <input type="text" name="" id="" placeholder="Indiquer la Region" formControlName = "region">
+                                <div *ngIf="serviceForm.get('region').errors && (serviceForm.get('region').dirty || serviceForm.get('region').touched)" class="error">
+                                    <div class="error" *ngIf="serviceForm.get('region').errors.required" translate>Le Nom de la Region est reccommandé</div>
+                                </div>
+                            </div>
+                            
                         </div>
+                        
                     </div>
-                    <div class="bpostal">
-                        <p translate>La Boite Postal</p>
-                        <input type="text" name="" id="" placeholder="Indiquer la Boite postale" formControlName = "bpostal">
-                    </div>
-                    <div class="region">
-                        <p translate>La Region *</p>
-                        <input type="text" name="" id="" placeholder="Indiquer la Region" formControlName = "region">
-                        <div *ngIf="serviceForm.get('region').errors && (serviceForm.get('region').dirty || serviceForm.get('region').touched)" class="error">
-                            <div class="error" *ngIf="serviceForm.get('region').errors.required" translate>Le Nom de la Region est reccommandé</div>
-                        </div>
-                    </div>
+                    
                     <div class="navibt">
                         <div class="preview" (click)="preview()"><p translate>PRÉCÉDENT</p></div>
                         <div class="next" (click)="otherNext()"><p translate>SUIVANT</p></div>
@@ -83,26 +131,17 @@
                     <div class="uploadimage">
                         <div class="imgcontent" (click)="fileInput.click()" drapDropFile (onFileDropped) ="uploadFile($event)">
                             <span translate>Chargé des Images</span>
-                            <input hidden type="file" #fileInput (change)="uploadFile($event.target.files)" formControlName = "images">
+                            <input hidden accept="image/*" type="file" multiple #fileInput (change)="uploadFile($event.target.files)" formControlName = "images">
                             <i class="fas fa-cloud-upload-alt"></i>
                         </div>
                     </div>
                     <div class="imagelist">
-                        <div class="clearfix" *ngFor ="let file of files; let i = index">
-                            <ul class="clearfix">
-                                <li class="clearfix">
-                                    <div class="box">
-                                        
-                                        <p class="delete-file" (click)="deleteAttachement(i)">
-                                            <b>{{file.name}}</b>
-                                            <i class="fas fa-trash"></i>
-                                        </p>
-                                    </div>
-                                    
-                                </li>
-                            </ul>
-                            
-                        </div>
+                        <span class="clearfix" *ngFor ="let file of files; let i = index">
+                            <b>{{file.name}}</b>
+                            <b class="delete-file" (click)="deleteAttachement(i)">
+                                <i class="fas fa-trash"></i>
+                            </b>
+                        </span>
                     </div>
                     <p translate>Si vous ne disposez pas d'image, vous pouvez sauter cette étape et valider l'insertion de vos données</p>
                     <div class="navibt">

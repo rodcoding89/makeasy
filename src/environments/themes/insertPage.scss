@@ -59,6 +59,7 @@
                 left: 9px;
                 top: 3px;
                 z-index: 1;
+                color: $header-color;
             }
         }
         .addressdata,.imgdata{
@@ -112,10 +113,15 @@
             margin-bottom: 15px;
         }
         .serviceName p, .serviceDescription p, .serviceDescription1 p, .serviceDescription1 p,
-        .city p, .distric p, .bpostal p, .region, .produitName p,.produitPrice p,.etatProduit p,
+        .produitName p,.produitPrice p,.etatProduit p,
         .produitDescription p,.bidName p,.bidPrice p,.bidDescription p{
             text-align: left;
             padding-left: 50px;
+            width: 100%;
+        }
+        .city p, .distric p, .bpostal p,.region p{
+            padding-left: 18px;
+            text-align: left;
             width: 100%;
         }
         .next{
@@ -124,17 +130,20 @@
             margin-top: 30px;
         }
     }
+    .block2{
+        height: 565px;
+    }
     .block2,.block3{
         position: absolute;
         .next,.preview{
-            @include pDecor(25%,gray);
+            @include pDecor(25%,rgb(160, 142, 142),0);
             display: inline-block;
             margin-top: 30px;
         }
         .navibt{
             display: flex;
             justify-content: space-between;
-            margin: 0 52px 0;
+            margin: 300px 52px 0;
         }
        
     }
@@ -184,12 +193,16 @@
     .check{
         display: flex;
         justify-content: space-between;
-        width: 85%;
+        width: 82%;
         margin: 0 50px;
         position: relative;
     }
-    .check .cbox1, .check .cbox2{
-        width: 10%;
+    .check .cbox2{
+        width: 17%;
+        height: 20px;
+    }
+    .check .cbox1{
+        width: 30%;
         height: 20px;
     }
     .region .error{
@@ -202,5 +215,66 @@
         font-size: 0.85em;
         font-family: inherit;
     }
+    .block2 .error{
+        margin: 10px 0 0 9px;
+    }
+    .localisationblock{
+        display: flex;
+        justify-content: space-between;
+        @include centerEl(82%);
+    }
+    .localblock,.diasporablock{
+        text-align: center;
+        width: 43%;
+        padding: 15px;
+        background-color: white;
+        margin-bottom: 20px;
+        cursor: pointer;
+    }
+    .diaspora, .local{
+        position: absolute;
+        top: 40px;
+        left: 6%;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-gap: 10px 10px;
+    }
+    .localactive,.diaspoactive{
+        background-color: $header-color;
+    }
+    .contentlocal,.contentdiaspora{
+        position: absolute;
+        width: 95%;
+        top: 225px;
+        h3{
+            margin: 0;
+        }
+    }
+    
+    .loader{
+        width: 100%;
+        height: 100%;
+        z-index: 11;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba($color: $content-color, $alpha: 0.5);
 
+    }
+    @media only screen and (min-width: 320px) and (max-width: 1205px) {
+        .formcontent{
+            position: absolute;
+            left: 10%;
+            z-index: -1;
+        }
+    }
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+        .followForm{
+            display: none;
+        }
+        .formblock{
+            width: 100%;
+        }
+    }
 }

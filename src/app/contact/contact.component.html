@@ -1,1 +1,59 @@
-<p>contact works!</p>
+<div class="loader" *ngIf = "isLoader"><div class="lds-ripple"><div></div><div></div></div></div>
+<div class="contact">
+    <div class="over"></div>
+    <div class="contactcontent">
+        <div class="contactblock">
+            <h3 translate>Nous contacter</h3>
+            <p translate class="text">Pour nous contacter vous devez remplir le formulaire en indiquant les données nécessaire</p>
+            <form action="" (ngSubmit) = "contact()" method="post" [formGroup] = "contactForm">
+                <div class="fname">
+                    <p for="name" translate>Nom et Prénom*</p>
+                    <input formControlName = "name" type="text" name="" id="name" placeholder="Indiquer votre nom et Prénom">
+                    <div *ngIf="contactForm.get('name').errors && (contactForm.get('name').dirty || contactForm.get('name').touched)" class="error">
+                        <div *ngIf="contactForm.get('name').errors.required" translate>Le Nom et Prénom sont obligatoir</div>
+                        <div *ngIf="contactForm.get('name').errors.minlength" translate>Votre Nom et Prénom doivent avoir au moin 3 charactéres</div>
+                    </div>
+                    <div class="success" *ngIf="contactForm.get('name').valid" translate>
+                        Parfait
+                    </div>
+                </div>
+                <div class="email">
+                    <p for="email" translate>Email*</p>
+                    <input type="email" name="" id="email" placeholder="Indiquer votre Email" formControlName = "email">
+                    <div *ngIf="contactForm.get('email').errors && (contactForm.get('email').dirty || contactForm.get('email').touched)" class="error">
+                        <div *ngIf="contactForm.get('email').errors.required" translate>Le Mail Address est obligatoir</div>
+                        <div *ngIf="contactForm.get('email').errors.email" translate>Votre Email est Invalide</div>
+                    </div>
+                    <div class="success" *ngIf="contactForm.get('email').valid" translate>
+                        Parfait
+                    </div>
+                </div>
+                <div class="lname">
+                    <p for="subject" translate>Sujet*</p>
+                    <input formControlName = "subject" type="text" name="" id="subject" placeholder="Le Sujet de votre message">
+                    <div *ngIf="contactForm.get('subject').errors && (contactForm.get('subject').dirty || contactForm.get('subject').touched)" class="error">
+                        <div *ngIf="contactForm.get('subject').errors.required" translate>Le Nom est obligatoir</div>
+                        <div *ngIf="contactForm.get('subject').errors.minlength" translate>Votre Nom doit avoir au moin 3 charactéres</div>
+                    </div>
+                    <div class="success" *ngIf="contactForm.get('subject').valid" translate>
+                        Parfait
+                    </div>
+                </div>
+                <div class="message">
+                    <p for="message">Message*</p>
+                    <textarea formControlName = "message" name="message" id="message" cols="30" rows="10" placeholder="Votre Message"></textarea>
+                    <div *ngIf="contactForm.get('message').errors && (contactForm.get('message').dirty || contactForm.get('message').touched)" class="error">
+                        <div *ngIf="contactForm.get('message').errors.required" translate>Le Nom est obligatoir</div>
+                        <div *ngIf="contactForm.get('message').errors.minlength" translate>Votre Nom doit avoir au moin 3 charactéres</div>
+                    </div>
+                    <div class="success" *ngIf="contactForm.get('message').valid" translate>
+                        Parfait
+                    </div>
+                </div>
+                <div class="sendmessage" translate><button type="submit" [disabled] = "!contactForm.valid">ENVOYER VOTRE MESSAGE</button></div>
+            </form>
+        </div>
+        
+    </div>
+</div>
+

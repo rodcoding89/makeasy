@@ -7,6 +7,12 @@
             </div>
         </div>
         <div class="otherblock" *ngIf="myNavi">
+            <div class="item" (click)= "showBlock('personalized')">
+                <div class="icon"><i class="fas fa-pager fa-2x"></i></div>
+                <h3 translate>Avoir ma Page personelle</h3>
+                <p translate>Souhaitez vous avoir une page a vous toute seule, ou vos Produits seront mits en prémiere ligne?</p>
+                <span translate>Plus de Details</span>
+            </div>
             <div class="item" (click)= "showBlock('profil')">
                 <div class="icon"><i class="fas fa-id-badge fa-2x"></i></div>
                 <h3 translate>Votre Profil</h3>
@@ -43,58 +49,322 @@
                 <p translate>Recapitulatif sur vos besoins postés dans notre base de donnée</p>
                 <span translate>Plus de Details</span>
             </div>
-            <div class="item" (click)= "showBlock('personalized')">
-                <div class="icon"><i class="fas fa-pager fa-2x"></i></div>
-                <h3 translate>Avoir ma Page personelle</h3>
-                <p translate>Souhaitez vous avoir une page a vous toute seule, ou vos données seront reguliérement recapitulées et vos service mit en prémiere ligne?</p>
+            <div class="item" (click)= "showBlock('feedback')">
+                <div class="icon"><i class="fas fa-comments fa-2x"></i></div>
+                <h3 translate>Vos Feedback</h3>
+                <p translate>Represente toute vos echanges faite avec d'autre utilisateur dans le cadre d'une vente, d'achat ou d'un reiseignement.</p>
                 <span translate>Plus de Details</span>
             </div>
-            <div class="item" (click)= "showBlock('myexchange')">
-                <div class="icon"><i class="fas fa-comments fa-2x"></i></div>
-                <h3>Mes Feedback</h3>
-                <p>Represente toute vos echanges faite avec d'autre utilisateur dans le cadre d'une vente, d'achat ou d'un reiseignement.</p>
-                <span>Plus de Details</span>
+            <div class="item" (click)= "showBlock('contact')">
+                <div class="icon"><i class="fas fa-address-book fa-2x"></i></div>
+                <h3 translate>Vos Contacts</h3>
+                <p translate>Un recaputilatif de ceux avec qui vous avez étès en contact ou ceux avec qui vous avez realisé une affaire.</p>
+                <span translate>Plus de Details</span>
             </div>
         </div>
-        <div class="deconn">DECONNEXION</div>
+
     </div>
     <div class="contentblock">
         <div class="innercontentblock">
-            <div *ngIf="isContentP"></div>
-            <div *ngIf="isContentS"></div>
-            <div *ngIf="isContentR"></div>
-            <div *ngIf="isContentA"></div>
-            <div *ngIf="isContentB"></div>
-            <div *ngIf="isContentPP"></div>
+            <div *ngIf="isContentP">
+                <div class="profil">
+                    <div class="profilcontent">
+                        <div class="back" translate (click) = "backToOtherBlock('profil')">RETOUR A LA PAGE PRÉCÉDENTE</div>
+                        <h3 translate>Compléter Votre Profil</h3>
+
+                        <form action="" method="post" [fomGroup] = "addressForm" (ngSubmit) = "addresse()">
+                            <h2 translate>Changer votre Photo de Profil</h2>
+                            <input type="file" name="photo" id="photo" class="photo">
+                            <label for="photo" translate><i class="fas fa-upload"></i>Modifier la Photo</label>
+                            <input type="submit" value="CHANGER VOTRE PHOTO DE PROFIL" translate>
+                        </form>
+                        <form action="" method="post">
+                            <h2>Changer votre email addresse</h2>
+                            <p>Nouveau email</p>
+                            <input type="email" name="" id="">
+                            <input type="submit" value="CHANGER VOTRE EMAIL">
+                        </form> 
+                        <form action="" method="post">
+                            <h2>Changer votre mot de passe</h2>
+                            <p>Nouveau mot de passe</p>
+                            <input type="password" name="" id="">
+                            <input type="submit" value="CHANGER VOTRE MOT DE PASSE">
+                        </form>
+                        <form action="" method="post">
+                            <h2>Changer votre Numéro de téléphone</h2>
+                            <p>Nouveau Numero de Téléphone</p>
+                            <input type="tel" name="" id="">
+                            <input type="submit" value="CHANGER VOTRE MOT DE PASSE">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="isContentS">
+                <div class="service">
+                    <div class="back" translate (click) = "backToOtherBlock('service')">RETOUR A LA PAGE PRÉCÉDENTE</div>
+                    <div class="servicecontent">
+                        <div class="noelement" *ngIf = "!isElementS">
+                            <h2>{{dataservice}}</h2>
+                        </div>
+                        <div class="itemblock" *ngIf = "isElementS">
+                            <h3 translate>Vos Services insérés</h3>
+                            <div class="element">
+                                <div class="item" *ngFor = "let data of servicedata">
+                                    <h3>{{data.servicename}}</h3>
+                                    <p>{{data.prix}}</p>
+                                    <p translate>type Service</p>
+                                    <div class="bts">
+                                        <div class="boster">PASSER EN TÊTE</div>
+                                        <div class="delete"(click) = "deleteItemService(data.insertserviceid)">SUPRIMER</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="isContentR">
+                <div class="research">
+                    <div class="back" translate (click) = "backToOtherBlock('research')">RETOUR A LA PAGE PRÉCÉDENTE</div>
+                    <div class="researchcontent">
+                        <div class="noelement" *ngIf = "!isElementR">
+                            <h2>{{dateresearch}}</h2>
+                        </div>
+                        <div class="itemblock" *ngIf = "isElementR">
+                            <h3 translate>Vos Recherches de Services insérés</h3>
+                            <div class="element">
+                                <div class="item" *ngFor = "let data of researchservicedata">
+                                    <h3>{{data.researchname}}</h3>
+                                    <p>{{data.prix}}</p>
+                                    <p translate>type Recherche Service</p>
+                                    <div class="bts">
+                                        <div class="boster">PASSER EN TÊTE</div>
+                                        <div class="delete" (click) = "deleteItemResearch(data.researchserviceid)">SUPRIMER</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="isContentA">
+                <div class="ad">
+                    <div class="back" translate (click) = "backToOtherBlock('ad')">RETOUR A LA PAGE PRÉCÉDENTE</div>
+                    <div class="adcontent">
+                        <div class="noelement" *ngIf = "!isElementA">
+                            <h2>{{dataad}}</h2>
+                        </div>
+                        <div class="itemblock" *ngIf = "isElementA">
+                            <h3>Vos Annonces insérés</h3>
+                            <div class="element">
+                                <div class="item" *ngFor = "let data of addata">
+                                    <h3>{{data.adname}}</h3>
+                                    <p>{{data.prix}}</p>
+                                    <p translate>Type Annonce</p>
+                                    <div class="bts">
+                                        <div class="boster">PASSER EN TÊTE</div>
+                                        <div class="delete" (click) = "deleteItemAd(data.adid)">SUPRIMER</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="isContentB">
+                <div class="ad">
+                    <div class="back" translate (click) = "backToOtherBlock('need')">RETOUR A LA PAGE PRÉCÉDENTE</div>
+                    <div class="needcontent">
+                        <div class="noelement" *ngIf = "!isElementN">
+                            <h2>{{dataneed}}</h2>
+                        </div>
+                        <div class="itemblock" *ngIf = "isElementN">
+                            <h3 translate>Vos Besoins insérés</h3>
+                            <div class="element">
+                                <div class="item" *ngFor = "let data of needdata">
+                                    <h3>{{data.needname}}</h3>
+                                    <p>{{data.prix}}</p>
+                                    <p translate>Type Besoin</p>
+                                    <div class="bts">
+                                        <div class="boster">PASSER EN TÊTE</div>
+                                        <div class="delete" (click) = "deleteItemNeed(data.needid)">SUPRIMER</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="isContentPP">
+                <div class="research">
+                    <div class="back" translate (click) = "backToOtherBlock('product')">RETOUR A LA PAGE PRÉCÉDENTE</div>
+                    <div class="productcontent">
+                        <div class="noelement" *ngIf = "!isElementPP">
+                            <h2>{{dataproduct}}</h2>
+                        </div>
+                        <div class="itemblock" *ngIf = "isElementPP">
+                            <h3 translate>Vos Produits insérés</h3>
+                            <div class="element">
+                                <div class="item" *ngFor = "let data of productdata">
+                                    <h3>{{data.productname}}</h3>
+                                    <p>{{data.prix}}</p>
+                                    <p translate>type Produit</p>
+                                    <div class="bts">
+                                        <div class="boster">PASSER EN TÊTE</div>
+                                        <div class="delete" (click) = "deleteItemProduct(data.productid)">SUPRIMER</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
             <div *ngIf="isPersonalized" class="personalized">
                 <div class="personalizedcontent">
-                    <div class="back" translate>RETOUR A LA PAGE PRÉCÉDENTE</div>
-                    <div class="textcontact">
-                        <h2 translate>Mes contacts</h2>
-                        <p translate>La Page personnalisé vous donne la possibilité d'avoir vos contacts. ces contacts sont le fruit des echanges que vous avez realisé avec d'autre personne, dans le cadre commercial ou d'un echange simple.</p>
-                        <p translate>Avec cela vous pouvez donc avoir votre liste a porté de main et realiser facilement vos affaires</p>
-                        <p translate>Dans quel mesure cela peut m'être utile ? vous n'avez pas toujours le temps de rechercher avec qui vous avez realisé une affaire derniérement,cette liste vous donne une liste des personnes avec qui vous avez étè en contact recement.</p>
+                    <div class="back" translate (click) = "backToOtherBlock('personalized')">RETOUR A LA PAGE PRÉCÉDENTE</div>
+                    <div class="personalizedblock">
+                        <div class="followForm">
+                            <div class="serviceData">
+                                <h3 translate>Étape concernant ma page personalisé</h3>
+                                <h5 translate>Étape 1</h5>
+                                <p translate>Information relatif a la Page</p>
+                                <div class="circle"><b>1</b></div>
+                            </div>
+                           <div class="addressdata" *ngIf="isPageInscription">
+                                <div class="line"></div>
+                                <div class="circle1"><b>2</b></div>
+                                <h5 translate>Étape 2</h5>
+                                <p translate>Insertion des données</p>
+                           </div>
+                           <div class="imgdata" *ngIf="isPayment">
+                                <div class="circle1"><b>2</b></div><br/>
+                                <div class="line1"></div>
+                                <div class="circle3"><b>3</b></div>
+                                <h5 translate>Étape 3</h5>
+                                <p translate>validation des données et Payment</p>
+                           </div>
+                        </div>
+                        <div class="paymentmethod">
+                            <div class="textcontent" *ngIf="isText">
+                                <div class="textcontact">
+                                    <h3 translate>Les services que vous proposez</h3>
+                                    <p translate>La Page personnalisé vous donne la possibilité d'avoir une Page a vous, ou vous exposeriez vos Produits. Vos visiteurs auront donc la possibilité de visité vos Produits.
+                                    Cela vous donnes une presence en ligne, et vous permet de faire de la Pub sur vos Produits.
+                                    Dans quel mesure cela peut m'être utile ? vous voulez avoir une presence en ligne pour faire valoir vos services, ou faire la Pub de vos Produits.</p>
+                                </div>
+                                <div class="myexchange">
+                                    <h3 translate>Realisation des Commande</h3>
+                                    <p translate>Cette page vous ddonne la possibilité de faire des commande, car vous avez une presence en ligne. Vous pouvez ainsi enregistrer des commande de vos differents Clients.
+                                    Comme avantage, vous n'avez plus besoin de vous deplacé ou d'appeler tous vos Client pour realisé vos commandes, car ils pouront simplement consulter votre page pour voir ce que vous proposé, et faire des commande s'ils sont intéréssès</p>
+                                </div>
+                                <div class="">
+                                    <h3 translate>Vous contacter en cas d'intérrè du Client</h3>
+                                    <p translate>Le Client a la possibilité de vous contacter via un formulaire ou simplement vous appelez</p>
+                                </div>
+                                <div class="doingservice">
+                                    <h3 translate>Vos Services déja rendu</h3>
+                                    <p translate>Pour rendre vos Client ou potentiel Client plus confiant, vos Services déja rendu seront postés, pour permettrea chaque visiteur d'etre en confiance.</p>
+                                </div>
+                                <p translate>Activé votre page personnel revient a pays 5,32 euro le moi. Ideal pour ceux qui non pas les moyen de ce payer un site internet.</p>       
+                                <div class="activepage" (click) = "activeMyPage()" translate>ACTIVER MA PAGE PERSONELLE</div>
+                            
+                            </div>
+                            <div class="pagedescription" *ngIf="isPageInscriptionBlock">
+                                <h3 translate>Données consernant la Page personalisé</h3>
+                                <form action="" [formGroup] = "personalizeForm" (ngSubmit) = "pageInscription()">
+                                    <div class="bussnessname">
+                                        <p translate>Le Label de ton Bussness*</p>
+                                        <input type="text" name="" id="" formControlName = "bname">
+                                        <div *ngIf="personalizeForm.get('bname').errors && (personalizeForm.get('bname').dirty || personalizeForm.get('bname').touched)">
+                                            <div class="error" *ngIf="personalizeForm.get('bname').errors.required" translate>Le nom du Label de Votre Bussness est reccommandé</div>
+                                        </div>
+                                    </div>
+                                    <div class="description">
+                                        <p translate>Description en 2 ligne du Bussness*</p>
+                                        <textarea name="" id="" cols="30" rows="10" formControlName = "description"></textarea>
+                                        <div *ngIf="personalizeForm.get('description').errors && (personalizeForm.get('description').dirty || personalizeForm.get('description').touched)">
+                                            <div class="error" *ngIf="personalizeForm.get('description').errors.required" translate>La Description de votre Bussness est obligatoir</div>
+                                            <div class="error" *ngIf="personalizeForm.get('description').errors.maxlength" translate>Le Nombre Maximal est dépassé Veillés le reduire</div>
+                                        </div>
+                                    </div>
+                                    <div class="logopage">
+                                        <p translate>Le Logo de ton Bussness si vous en avez</p>
+                                        <input type="file" name="" id="" (change) = "upload()">
+                                    </div>
+                                    <div class="bt">
+                                        <div class="preview" (click) = "previewPage()"><p translate>PAGE PRÉCÉDENTE</p></div>
+                                        <div class="createpage"><button [disabled] = "!personalizeForm.valid" translate type="submit">CREER MA PAGE</button></div>
+                               
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="paymentmode" *ngIf = "isPaymentBlock">
+                                <h3>Bienvenu au Payment de votre Page Personalisée</h3>
+                                <p>Vous disposé de 2 Modes de payment</p>
+                                <ul>
+                                    <li>Payment par carte de credit
+                                        <div class="paymentcreditcart">
+                                            <div class="contenair">
+                                                <h3 translate>Information relative au Payement</h3>
+                                                <form novalidate (ngSubmit)="paymount()" [formGroup]="stripeTest">
+                                                    <div class="name">
+                                                        <input type="text" formControlName="name" placeholder="Jane Doe">
+                                                    </div>
+                                            
+                                                    <div class="card"><ngx-stripe-card
+                                                        [options]="cardOptions"
+                                                        [elementsOptions]="elementsOptions"
+                                                    ></ngx-stripe-card></div>
+                                                    <div class="buy">
+                                                        <button type="submit">
+                                                            BUY 5,32
+                                                          </button>
+                                                    </div>
+                                                    
+                                                </form>
+                                                
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>Par Orange Money</li>
+                                </ul>
+                                <div class="bt">
+                                    <div class="preview" (click) = "otherpreviewPage()"><p translate>PAGE PRÉCÉDENTE</p></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="myexchange">
-                        <h2 translate>Mes Échanges faites avec les autres</h2>
-                        <p translate>ce ci correspond aux echanges faites avec les autres, dans le cadre d'un simple echange ou commercial.</p>
-                        <p translate>cela vous donnes des Informations sur celui avec qui vous avez deja echangé et deqoui s'agissait t'il lors de vos echanges</p>
-                    </div>
-                    <div class="doingservice">
-                        <h2 translate>Mes Services Déja rendus</h2>
-                        <p translate>Ici vos services rendus sont reccapitulés et présentés, afin d'attirer l'attention sur vous et faire grandir vos contacts</p>
-                    </div>
-                    <div class="">
-                        <h2 translate>Les services que je propose</h2>
-                        <p translate>Ici est présenté le ou les Service que vous proposez, afin de permettre a ceux qui regarde votre page d'avoir une idée direct de quoi ou dans quoi es ce que vous faite</p>
-                    </div>
-                    <p translate>Activé votre page personnel revient a pays 5 euro le moi. Ideal pour ceux qui non pas les moyen de ce payer un site internet.</p>       
                 </div>
-                <div class="activepage" translate>ACTIVER MA PAGE PERSONELLE</div>
+                
             </div>
-            <div *ngIf="isFeedback"></div>
+            <div *ngIf="isFeedback">
+                <div class="feedback">
+                    <div class="back" translate (click) = "backToOtherBlock('feedback')">RETOUR A LA PAGE PRÉCÉDENTE</div>
+                    <div class="feedbackcontent">
+                        <div class="noelement" *ngIf = "!isElementF">
+                            <h2 translate>Aucun Element dans votre espace Feedback</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="isContact">
+                <div class="contact">
+                    <div class="back" translate (click) = "backToOtherBlock('contact')">RETOUR A LA PAGE PRÉCÉDENTE</div>
+                    <div class="contactcontent">
+                        <div class="noelement" *ngIf = "!isElementF">
+                            <h2 translate>Aucun Element dans votre espace Contact</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         
     </div>
+    <div class="deconn" (click)="logout()">DECONNEXION</div>
 </div>
 <router-outlet></router-outlet>

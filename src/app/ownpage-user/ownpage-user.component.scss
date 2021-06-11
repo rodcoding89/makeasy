@@ -1,0 +1,10 @@
+@import '../../scss/variable.scss';
+@import '../../environments/themes/page.scss';
+@include dialogContent();
+.personalisepage{
+    @include itemBlock($content-color);
+    margin-top: 50px;
+    .teaser{
+        text-align: center;
+    }
+}

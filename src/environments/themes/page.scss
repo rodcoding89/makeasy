@@ -37,6 +37,9 @@
                 margin: 0;
                 display: flex;
                 justify-content: space-between;
+                float: right;
+                width: 72%;
+                margin-top: -26px;
             }
              a {
                 text-decoration: none;
@@ -65,7 +68,7 @@
         }
         .auth{
             
-            @include decorNavi(7px,140px,0,none);
+            @include decorNavi(0px,133px,0,none);
             z-index: 11;
             border-radius: 5px;
             width: 18%;
@@ -80,7 +83,22 @@
              }
          } 
     }
-    
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+
+    }
+    @media only screen and (min-width: 320px) and (max-width: 1205px) {
+        .page .auth{
+            position: relative;
+            display: block;
+            width: 95%;
+            background-color: transparent;
+            box-shadow: none;
+            top: 0;
+        }
+        .over .actionsubnavi{
+            display: none;
+        }
+    }   
     
 }
 @mixin textarea($width,$height,$bcolor) {
@@ -102,8 +120,159 @@
     padding: 15px;
     top: $top;
 }
-@mixin centerEl() {
-    width: 80%;
+@mixin dialogContent() {
+    .dialog{
+        position: fixed;
+        z-index: 111;
+        top: 0;
+        width: 77%;
+        left: calc(100% / 2 - 80% / 2);
+        background-color: $white-color;
+        bottom: 0;
+        margin: 50px 0;
+        padding: 20px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        h1{
+            //color: $white-color;
+        }
+        p{
+            color: $content-color;
+        }
+        .otherblock{
+            display: flex;
+            justify-content: space-between;
+        }
+        .textcontent{
+            width: 50%;
+            p {
+                /*text-align: center;
+                padding: 15px;
+                background-color: $header-color;
+                color: $white-color;*/
+            }
+            h2{
+                color: $content-color;
+            }
+        }
+        .contact{
+            width: 48%;
+        }
+        .user{
+            display: flex;
+            justify-content: space-between;
+            p{
+                width: 88%;
+            }
+        }
+        .contactel1{
+            width: 94%;
+            margin: 50px 0;
+            border: 1px solid darkgray;
+            border-radius: 5px;
+            padding: 15px;
+            .pcontact {
+                text-align: center;
+                padding: 15px;
+                background-color: aqua;
+                cursor: pointer;
+            }
+            textarea{
+                @include textarea(95%,80px,darkgray);
+            }
+            .message{
+                p{
+                    width: 50%;
+                    padding: 15px;
+                    background-color: aqua;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    .btn{
+        float: right;
+    }
+    .over{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        background-color: rgba($color: $content-color, $alpha: 0.5);
+    }
+    .imgcontent{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        .showimg{
+            width: 48%;
+            img{
+                width: 100%;
+                height: 404px;
+            }
+        }
+    }
+    .imgblock{
+        display: grid;
+        width: 50%;
+        grid-template-columns: 50% 50%;
+        grid-gap: 10px;
+        img{
+            cursor: pointer;
+            width: 100%;
+            height: 200px;
+        }
+    }
+}
+@mixin itemBlock($hcolor:$header-color) {
+    display: grid;
+    grid-gap: 40px 40px;
+    grid-template-columns: auto;
+    
+    @include centerEl();
+    .item{
+        background-color: $white-color;
+        box-shadow: 0px 0px 3px 1px $hcolor;
+        height: 220px;
+        border-radius: 5px;
+        width: 60%;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        cursor: pointer;
+        img{
+            width: 217px;
+            height: 100%;
+        }
+        
+        .textblock{
+            padding: 15px;
+            width: 61%;
+            .para{
+                padding: 0 41px 0 0;
+            }
+            p{
+                color: $content-color;
+                margin-bottom: 0;
+                margin-top: 0;
+            }
+            h3{
+                color: $content-color;
+            }
+            .detail{
+                float: right;
+                color: $header-color;
+                position: absolute;
+                right: 42px;
+                bottom: 18px;
+            }
+        }
+    }
+}
+@mixin centerEl($width:80%) {
+    width: $width;
     margin: 0 auto;
 }
 @mixin bgimage($url,$repeat,$position,$size) {
@@ -112,7 +281,7 @@
     background-position: $position;
     background-size: $size;
 }
-@mixin input($width,$height,$bgcolor,$color,$mtop:50px,$hcolor:$header-color) {
+@mixin input($width,$height,$bgcolor,$color,$mtop:50px,$hcolor:$header-color,$pleft:10px) {
     width: $width;
     font-size: 1em;
     position: relative;
@@ -120,18 +289,18 @@
     background-color: $bgcolor;
     margin-top: $mtop;
     border-radius: 5px;
-    padding-left: 10px;
+    padding-left: $pleft;
     border: 1px solid $hcolor;
     color: $color;
 }
-@mixin pDecor($width,$bcolor:$header-color) {
+@mixin pDecor($width,$bcolor:$header-color,$pleft:10px) {
     margin-top: 50px;
     border-radius: 5px;
     border: 1px solid $bcolor;
     width: $width;
     height: 45px;
     cursor: pointer;
-    padding-left: 10px;
+    padding-left: $pleft;
     position: relative;
 }
 @mixin subnavi() {
@@ -172,6 +341,11 @@
                 }
             }
             @include centerEl();
+        }
+    }
+    @media only screen and (min-width: 320px) and (max-width: 1205px) {
+        .over .actionsubnavi{
+            display: none;
         }
     }
 }

@@ -1,5 +1,7 @@
 @import '../../../environments/themes/insertPage.scss';
+@import '../../../environments/themes/animation.scss';
 @include insertData();
+@include loader();
 .clearfix::after {
     content: "";
     clear: both;

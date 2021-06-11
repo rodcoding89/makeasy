@@ -19,7 +19,6 @@
         min-height: 484px;
         height: auto;
         max-height: 569px;
-        margin-top: 25px;
         padding-top: 110px;
         position: absolute;
         left: 4px;
@@ -63,7 +62,8 @@
             border-color: green;
         }*/
         input{
-            @include input(96%,40px,$white-color,block,0,$white-color);
+            @include input(83%,40px,$white-color,block,0,$white-color);
+            padding-left: 60px;
             &:focus-within{
                 border: 1px solid gray;
                 outline: none;
@@ -83,10 +83,6 @@
         
     }
     .authcontent{
-        margin-top: -24px;
-        height: 55px;
-        width: 100%;
-        background-color: $content-color;
         .logingrid{
             background-color: lavender;
             height: auto;
@@ -95,12 +91,11 @@
             width: 60%;
             position: absolute;
             right: -3px;
-            margin-top: 25px;
             text-align: center;
         }
     }
     .sendBt,.sendBtsign{
-        @include pDecor(96%,$content-color);
+        @include pDecor(97%,$content-color);
         text-align: center;
         margin-top: 78px;
         button{
@@ -138,6 +133,7 @@
         width: 88%;
         display: inline-block;
         margin: 40px;
+        
         .contentblock{
             padding: 40px;
             background-color: rgba($color: $header-color, $alpha: 0.05);
@@ -154,7 +150,8 @@
             color: $content-color;
         }
         input{
-            @include input(95%,40px,$white-color,block,0,$white-color);
+            @include input(73%,40px,$white-color,block,0,$white-color);
+            padding-left: 60px;
             &:focus-within{
                 border: 1px solid gray;
                 outline: none;
@@ -170,6 +167,17 @@
         text-align: left;
         
     }
+    .name,.lname,.email,.pass,.cpass,.tel{
+        position: relative;
+        i{
+            position: absolute;
+            z-index: 1;
+            padding: 14px;
+            left: 0;
+            top: 54px;
+            background-color: brown;
+        }
+    }
     .lpass p{
         margin-top: 0;
     }
@@ -177,9 +185,11 @@
         position: relative;
         i{
             position: absolute;
-            top: 19px;
+            top: 38px;
             left: 0;
             z-index: 1;
+            padding: 14px;
+            background-color: brown;
         }
         
     }
@@ -198,5 +208,24 @@
     }
     .gridsign .error, .gridsign .success{
         margin: -10px 0 0;
+    }
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+        .signtext{
+            display: none;
+        }
+        .authcontent .logingrid{
+            width: 100%;
+            left: 0;
+
+        }
+        .partone{
+            position: absolute;
+            width: 100%;
+        }
+    }
+    @media only screen and (min-width: 320px) and (max-width: 1205px) {
+        .authcontent .logingrid{
+            z-index: -1;
+        }
     }
 }

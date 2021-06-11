@@ -1,0 +1,61 @@
+<div class="personalizepageuser">
+    <h1 *ngIf = "isMessageText" class="teaser">{{messageText}}</h1>
+    <div *ngIf = "!isMessageText" class="personalisepage">
+       
+        <div class="item" *ngFor = "let data of personalizepage">
+            <div class="img">
+                <img src="{{data.firsturl}}" alt="" sizes="" srcset="">
+            </div>
+            <div class="textblock" (click) = "detailProductPage(data)">
+                <h3>{{data.productname}}</h3>
+                <p translate>{{data.prix}}</p>
+                <p>{{data.city}}-{{data.region}}</p>
+                <p>Posté le {{data.date}}</p><br/>
+                <p class="para">{{data.productdescription.split(" ", 8).join(" ")}} ...</p>
+                <p translate class="detail">Plus de detail</p>
+            </div>
+        </div>
+       
+    </div>
+    <div class="over" *ngIf="showDialog">
+        <modal *ngIf="showDialog" class="dialog">
+            <div class="imgcontent">
+                <div class="imgblock">
+                    <img src="{{l}}" alt="" *ngFor = "let l of link" (click) = "showImage(l)">
+                </div>
+                <div class="showimg">
+                    <img src="{{imgurl}}" alt="" srcset="">
+                </div>
+            </div>
+            <div class="otherblock">
+                <div class="textcontent">
+                    <h1>{{sname}}</h1>
+                    <p>{{sprix}}</p>
+                    <h3 translate>Description du Produit</h3>
+                    <p>{{sdescription}}</p>
+                    <h2 translate>Localisation </h2>
+                    <p>Rue ou Quartier : {{sruequartier}}</p>
+                    <p>Ville : {{scity}}</p>
+                    <p>Region : {{sregion}}</p>
+                    <p>Pays : {{spays}}</p>
+                </div>
+                <div class="contact">
+                    <div class="contactel1">
+                        <div class="user">
+                            <i class="fas fa-user fa-2x"></i>
+                            <p>{{sfname}} {{slname}}</p>
+                        </div>
+                        <p translate class="pcontact" (click) = "sendMessage()">ENVOYER UN MESSAGE</p>
+                        <div class="message" *ngIf = "isMessage">
+                            <textarea name="" id="" cols="30" rows="10"></textarea>
+                            <p>ENVOYER LE MESSAGE</p>
+                        </div>
+                        <p class="pcontact" (click) = "getCommand()" translate>COMMANDER</p>
+                    </div>
+                </div>
+            </div>
+            
+            <button (click)="showDialog = !showDialog" class="btn">Close</button>
+        </modal>
+    </div>
+</div>

@@ -9,10 +9,10 @@ export class LoginGuardService implements CanActivate{
 
   constructor(private router : Router) { }
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
-    if (localStorage.getItem("user") === "loa") {
+    if (localStorage.getItem("user")) {
       return true;
     } else {
-      this.router.navigate(['individual']);
+      this.router.navigate(['/authentification/individual']);
       return false;
     }
   }

@@ -1,0 +1,103 @@
+@import '../../environments/themes/page.scss';
+@import '../../scss/variable.scss';
+//@import '../../environments/themes/insertPage.scss';
+.contact{
+    background-color: $content-color;
+    margin-top: -19px;
+}
+.contactblock{
+    padding: 45px;
+    background-color: burlywood;
+    width: 40%;
+    display: inline-block;
+}
+.over{
+    position: relative;
+    background-color: $content-color;
+    height: 105px;
+    width: 100%;
+    z-index: -1;
+}
+.contactcontent{
+    @include centerEl();
+    //background-color: rgba($color: $white-color, $alpha: 0.5);
+    text-align: center;
+    input{
+        @include input(96%,40px,$white-color,block,0,$white-color);
+        &:focus-within{
+            border: 1px solid gray;
+            outline: none;
+        }
+    }
+    h3{
+        padding: 92px 0 20px;
+        color: #fff;
+        text-align: left;
+    }
+    
+    .error,.success{
+        text-align: left;
+        margin: 10px 0 0 0px;
+        color: red;
+        font-size: 0.85em;
+        font-family: inherit;
+        text-align: left;
+    }
+    .contactblock, .success{
+        color: green;
+    }
+    form{
+        width: 98%;
+        /* text-align: center; */
+        display: inline-block;
+    }
+    textarea{
+        @include textarea(95%,80px,$white-color);
+            &:focus{
+                border-color: gray;
+                outline: none;
+            }
+    }
+    button{
+        border: none;
+        outline: none;
+        background: transparent;
+        margin: 20px 0;
+        background-color: lavender;
+        padding: 20px;
+        width: 100%;
+        cursor: pointer;
+    }
+    .text{
+        color: $header-color;
+        text-align: left;
+        padding-left: 241px;
+    }
+    .fname, .lname, .email, .message{
+        padding-bottom: 25px;
+    }
+    .fname p, .lname p, .email p, .message p{
+        text-align: left;
+    }
+    @media only screen and (min-width: 320px) and (max-width: 1205px) {
+        .contactcontent{
+            position: absolute;
+            width: 100%;
+        }
+    }
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+       
+        .contactcontent{
+            position: absolute;
+            width: 100%;
+        }
+        
+        .contactblock{
+            padding: 0px 130px;
+            background-color: burlywood;
+            width: 82.7%;
+        }
+        
+        
+    }
+}

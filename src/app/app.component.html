@@ -5,13 +5,12 @@
       <div class="firstLang" [ngClass]="{'activeLang' : checkLangfr == true}" (click)="useLanguage('fr')">FR</div>
       <div [ngClass]="{'activeLang' : checkLangen == true}"(click)="useLanguage('en')" class="en">EN</div>
     </div>
-    
+    <div class="logo"></div>
     <nav>
       <div class="navi">
-        <div class="logo"></div>
         <div class="home"><a routerLink="/home" routerLinkActive="active" translate>ACCEUIL<i class="fas fa-home"></i></a></div>
         <div class="action"><a routerLink="/action" routerLinkActive="active" translate>EFFECTUER UNE ACTION<i class="fas fa-cog"></i></a></div>
-        <div class="depot"><a routerLink="/depot" routerLinkActive="active" translate>VOS DÉPÔTS <i class="fas fa-caret-down"></i></a></div>
+        <div class="depot"><a routerLink="/ownpage" routerLinkActive="active" translate>VOS PAGES <i class="fas fa-caret-down"></i></a></div>
         <div class="contact"><a routerLink="/contact" routerLinkActive="active" translate>NOUS CONTACTER <i class="far fa-address-book"></i></a></div>
         <div *ngIf = "showHead" class="connnav"><a routerLink="/authentification" routerLinkActive="active" class="conn" translate>CONNEXION <i class="fas fa-sign-in-alt"></i></a>
           <div class="auth">
@@ -27,9 +26,48 @@
           <i class="fas fa-user fa-2x" (click)= "dashboard()"></i>
           <b>{{name}}</b>
         </div>
+        
       </div>
     </nav>
-    
+    <nav class="mobil" [@leftright] = "state">
+      <div class="navimobil">
+        <div (click) = "hideNavi()" class="home"><a routerLink="/home" routerLinkActive="active" translate>ACCEUIL<i class="fas fa-home"></i></a></div>
+        <div (click) = "hideNavi()" class="action">
+          <a routerLink="/action" routerLinkActive="active" translate>EFFECTUER UNE ACTION<i class="fas fa-cog"></i></a>
+          <div class="actionsubnavi">
+            <ul>
+              <li><a [routerLink]="['action/insert-service']" routerLinkActive="actionActive" translate>INSERER UN SERVICE <i class="fas fa-database"></i></a></li>
+              <li><a [routerLink]="['action/insert-research-service']" routerLinkActive="actionActive" translate>INSERER DES RECHERCHES DE SERVICES <i class="fas fa-database"></i></a></li>
+              <li><a [routerLink]="['action/insert-product']" routerLinkActive="actionActive" translate>INSERER DES PRODUITS <i class="fas fa-database"></i></a></li>
+              <li><a [routerLink]="['action/insert-need']" routerLinkActive="actionActive" translate>INSERER DES BESOINS <i class="fas fa-database"></i></a></li>
+              <li><a [routerLink]="['action/insert-ad']" routerLinkActive="actionActive" translate>INSERER DES ANNONCES <i class="fas fa-database"></i></a></li>
+            </ul>
+          </div>
+        </div>
+        <div (click) = "hideNavi()" class="depot"><a routerLink="/ownpage" routerLinkActive="active" translate>VOS PAGES <i class="fas fa-caret-down"></i></a></div>
+        <div (click) = "hideNavi()" class="contact"><a routerLink="/contact" routerLinkActive="active" translate>NOUS CONTACTER <i class="far fa-address-book"></i></a></div>
+        <div (click) = "hideNavi()" *ngIf = "showHead" class="connnav"><a routerLink="/authentification" routerLinkActive="active" class="conn" translate>CONNEXION <i class="fas fa-sign-in-alt"></i></a>
+          <div class="auth">
+            <div class="individual">
+              <a routerLink="/authentification/individual" routerLinkActive="authactive" translate >PARTICULIER <i class="fas fa-user"></i></a>
+            </div>
+            <div class="company">
+              <a routerLink="/authentification/company" routerLinkActive="authactive" translate >COMPAGNIE OU ENTREPRISE <i class="fas fa-users"></i></a>
+            </div>
+          </div>
+        </div>
+        <div (click) = "hideNavi()" class="user" *ngIf = "!showHead" (click) = "showNav()">
+          <i class="fas fa-user fa-2x" (click)= "dashboard()"></i>
+          <b>{{name}}</b>
+        </div>
+        
+      </div>
+    </nav>
+    <div class="menu" (click) = "openNavi()" *ngIf="isMenu">
+      <div class="top"></div>
+      <div class="midel"></div>
+      <div class="bottom"></div>
+    </div>
   </div>
 </div>
 <router-outlet></router-outlet>
